@@ -9,13 +9,11 @@ import './style.css'
 export default function Teacher() {
   return (
       <div className="content">
-        <PeopleCard photo={photo} />
-          <div id='div'>
-              <ScoreCard score={87} popular={29} classes={8451} />
-
-              <TotalClasses />
-              <p>grefdsgv</p>
-          </div>
-          </div>
+        <PeopleCard photo={photo} name="John Wick" role="Calculus Teacher" phrase="Prefiro morrer do que perder a vida." teacherDate={2001} year={2004}/>
+        <div id='div'>
+            <ScoreCard score={87} popular={29} classes={8451} />
+            <TotalClasses />
+        </div>
+      </div>
   )
 }

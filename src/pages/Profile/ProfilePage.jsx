@@ -1,7 +1,7 @@
 import React from 'react'
 import PeopleCard from '../../components/PeopleCard/PeopleCard'
 import TotalClasses from '../../components/TotalClasses/TotalClasses';
-import photo from '../../assets/paulo.png'
+import photo from '../../assets/dog.jpg'
 import ScoreCard from '../../components/ScoreCard/ScoreCard'
 import './style.css'
 import EmailCard from '../../components/EmailCard/EmailCard';
@@ -14,7 +14,7 @@ export default function profile() {
         <div >
           <PeopleCard
             photo={photo} 
-            name='Michael Jordan' 
+            name='Keenan Lane' 
             role='Student' 
             phrase='Unexpressed emotions will never die. They are buried alive and will come forth later in uglier ways.' 
             course='High School'

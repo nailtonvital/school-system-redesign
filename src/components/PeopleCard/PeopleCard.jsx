@@ -11,14 +11,14 @@ export default function PeopleCard(props) {
           <div className="info">
               <div className="name">{props.name}</div>
               <div className="class">{props.role}</div>
-              <div className="bio"> <i>"{props.phrase}"</i>
-              </div>
+              {props.phrase ? <div className="bio"> <i>"{props.phrase}"</i> </div>: null}
+              
               <div className="info-bullet">
                   <i className='bx bx-time'></i>
-                  {props.course}
+                  {props.course ? props.course : <span>Works as teacher since {props.teacherDate}</span> }
                   <br />
-                  <i className='bx bxs-map'></i>
-                  Since {props.year} on Etec Albert Einstein
+                  
+                  {props.year ? <> <i className='bx bx-map'></i> <span>Since {props.year} on Etec Albert Einstein</span> </> : null}
               </div>
           </div>
           <div className="social-media">

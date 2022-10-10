@@ -16,8 +16,8 @@ export default function Navbar() {
                   </span>
 
                   <div className="text header-text">
-                      <span className="name"><b>Paulo Souza</b></span>
-                      <span className="position">Student</span>
+                        <span className="name"><b>Keenan</b></span>
+                        <span className="position">Student</span>
 
                   </div>
               </div>

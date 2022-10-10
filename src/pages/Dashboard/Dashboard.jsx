@@ -5,6 +5,7 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import Navbar from '../../components/Navbar/Navbar';
 import ProfilePage from '../Profile/ProfilePage';
 import Teacher from '../Teacher/Teacher';
+import StudentDashboard from '../StudentDashboard/StudentDashboard';
 
 
 export default function Dashboard() {
@@ -17,6 +18,7 @@ export default function Dashboard() {
                   <Routes>
                       <Route path="me" element={<ProfilePage />} />
                       <Route path="teacher" element={<Teacher />} />
+                      <Route path="" element={<StudentDashboard />} />
                   </Routes>
                 
             </div>

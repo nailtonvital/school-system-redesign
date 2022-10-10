@@ -26,20 +26,20 @@ function Sidebar() {
                             </Link>
                           </li>
                           <li className="nav-link">
-                              <a href="#">
-                                  <i className='bx bx-table icon'></i>
-                                  <span className="text nav-text">
-                                      Boletim
-                                  </span>
-                              </a>
+                            <a href="#">
+                                <i className='bx bx-window icon'></i>
+                                <span className="text nav-text">
+                                    Classes
+                                </span>
+                            </a>
                           </li>
                           <li className="nav-link">
-                              <a href="#">
-                                  <i className='bx bx-window icon'></i>
-                                  <span className="text nav-text">
-                                      Classes
-                                  </span>
-                              </a>
+                            <Link to='teacher'>
+                                <i class='bx bx-group icon'></i>
+                                <span className="text nav-text">
+                                    Teachers
+                                </span>
+                            </Link>
                           </li>
 
                       </ul>
