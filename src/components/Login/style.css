@@ -1,0 +1,46 @@
+.login_area,
+.login_area form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login_area {
+    color: black;
+    background-color:white;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    padding: 45px;
+    border-radius: 8px;
+}
+
+.heading {
+    margin-bottom: -5px;
+}
+
+.login_title {
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 6px;
+    border-style: solid;
+    border-radius: 8px;
+    background-color: transparent;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.login_button {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #B11016;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    color: white;
+}
+

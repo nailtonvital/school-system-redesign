@@ -1,0 +1,27 @@
+/* analytics */
+.analytics-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-inline: 40px;
+    min-height: 130px;
+    width: 100%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 7px rgb(25, 24, 24);
+}
+
+.score, .popular, .classes-given{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.emphasys {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: -10px;
+}

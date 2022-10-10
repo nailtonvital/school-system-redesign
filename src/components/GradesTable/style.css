@@ -1,0 +1,29 @@
+.gradesTable{
+    margin-top: 15px;
+}
+
+.cardHeader, .yearSelect{
+    display: flex;
+}
+
+.cardHeader{
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.yearSelect{
+    align-items: center;
+}
+
+table{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    padding-inline: 15px;
+    padding-bottom: 15px;
+}
+
+td{
+    padding: 8px;
+    border-top: 1px solid #ddd;
+}

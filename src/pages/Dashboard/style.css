@@ -1,0 +1,56 @@
+
+
+
+
+/* Sidebar*/
+
+
+
+
+
+
+.tab-content {
+    margin-left: 225px;
+    padding: 10px;
+    width: 80%;
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    transition: var(--tran-05);
+}
+
+.header-content {
+    padding-left: 12px;
+    padding-top: 5px;
+}
+
+.header-content,
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+.tab-content {
+    margin-left: 17%;
+    padding: 10px;
+    width: 83%;
+    color: var(--text-color);
+    transition: var(--tran-05);
+    overflow-x: 0;
+}
+
+.header-content {
+    padding-left: 12px;
+    padding-top: 5px;
+}
+
+.header-content,
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

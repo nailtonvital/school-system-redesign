@@ -1,0 +1,18 @@
+.emailCard {
+    margin-top: 15px;
+    margin-right: 18px;
+    padding: 20px;
+    width: 350px;
+}
+a{
+    text-decoration: none;
+}
+
+li{
+
+    list-style-type: none;
+}
+
+#copyButton:hover{
+    cursor: pointer;
+}
