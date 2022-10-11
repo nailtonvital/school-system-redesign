@@ -1,3 +1,13 @@
-.legendItem{
+.legend{
     display: flex;
+}
+
+.legendItem{
+    text-align: center;
+}
+
+.indicator{
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
 }

@@ -26,12 +26,12 @@ function Sidebar() {
                             </Link>
                           </li>
                           <li className="nav-link">
-                            <a href="#">
+                            <Link to="classes">
                                 <i className='bx bx-window icon'></i>
                                 <span className="text nav-text">
                                     Classes
                                 </span>
-                            </a>
+                            </Link>
                           </li>
                           <li className="nav-link">
                             <Link to='teacher'>

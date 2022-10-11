@@ -17,6 +17,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} >
           <Route path="me" element={<ProfilePage />} />
           <Route path="teacher" element={<Teacher />} />
+          <Route path="classes" />
         </Route>
       </Routes>
     </Router>

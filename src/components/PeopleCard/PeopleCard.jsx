@@ -4,6 +4,7 @@ import './index.css'
 
 export default function PeopleCard(props) {
   return (
+    <>
       <div className="profile-card">
           <div >
               <img src={props.photo} alt="" className="photo" />
@@ -40,5 +41,7 @@ export default function PeopleCard(props) {
               </button>
           </div>
       </div>
+      <></>
+      </>
   )
 }

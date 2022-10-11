@@ -23,13 +23,7 @@ export default function PresenceCard() {
 
 
     const options = {
-       // See https://github.com/pandameister/chartjs-chart-radial-gauge#options
-    domain: [0, 100],
-    trackColor: '#f0f8ff', 
-    centerPercentage: 90,
-    centerArea: {
-      text: (val) => val + '%',
-    }
+     
     
     }
 
@@ -45,8 +39,14 @@ export default function PresenceCard() {
 
         <Doughnut data={data}  className="" />
         <div className="legend">
-              <p>Total Classes: 104</p>
-              <p>Presence: 15</p>
+            <div>
+                <h5>15</h5>
+                <p>Presence</p>
+            </div>
+            <div>
+                <h5>104</h5>
+                <p>Total Classes</p>
+            </div>
         </div>
         </div>
   )

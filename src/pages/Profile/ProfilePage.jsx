@@ -1,7 +1,7 @@
 import React from 'react'
 import PeopleCard from '../../components/PeopleCard/PeopleCard'
 import TotalClasses from '../../components/TotalClasses/TotalClasses';
-import photo from '../../assets/dog.jpg'
+import photo from '../../assets/Keenan.jpg'
 import ScoreCard from '../../components/ScoreCard/ScoreCard'
 import './style.css'
 import EmailCard from '../../components/EmailCard/EmailCard';

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './style.css'
-import paulo from '../../assets/dog.jpg'
+import paulo from '../../assets/Keenan.jpg'
 
 export default function Navbar() {
     const location = useLocation();

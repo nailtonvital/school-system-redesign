@@ -33,16 +33,17 @@ export default function GradeCard() {
         <div className='dashboardCard card'>
             <div className="label">
                 <div className="cardHead">
-                    <h4>Performace</h4>
+                    <h4>Performance</h4>
                     <p>Your Grades</p>
                 </div>
             </div>
 
             <Doughnut data={data} className="" />
             <div className="legend">
-                <ul>
-                    <li className='legendItem'><span>.</span><br /><p>MB</p></li>
-                </ul>
+                <p className='legendItem'><span className='indicator' style={{ color: '#04C35C' }}>⬤</span><br />MB</p>
+                <p className='legendItem'><span className='indicator' style={{ color: '#4285F4' }}>⬤</span><br />B</p>
+                <p className='legendItem'><span className='indicator' style={{ color: '#E5E866' }}>⬤</span><br />R</p>
+                <p className='legendItem'><span className='indicator' style={{ color: '#E25959' }}>⬤</span><br />I</p>
             </div>
         </div>
     )
