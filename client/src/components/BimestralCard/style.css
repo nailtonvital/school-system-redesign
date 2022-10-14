@@ -1,0 +1,17 @@
+.bimestralCard{
+    height: 337px;
+}
+
+.lineChart{
+    margin: 0;
+    margin-top: 35px;
+    width: 102.5%;
+    height: 70.5%;
+}
+
+#label{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}

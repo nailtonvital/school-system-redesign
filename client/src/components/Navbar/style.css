@@ -1,0 +1,18 @@
+
+
+.header-content {
+    padding-left: 12px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+}
+
+.header-content,
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navTitle::first-letter {
+    text-transform: capitalize;
+}
