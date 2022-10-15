@@ -4,10 +4,10 @@ import './style.css'
 export default function TodayClasses() {
     const lines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 121]
   return (
-      <div className='col-span-3 card'>
-        <h4>Today Classes</h4>
+      <div className='col-span-3 p-5 card'>
+          <h4 className='font-medium leading-tight text-xl mt-0 mb-2'>Today Classes</h4>
 
-          <table id='classes'>
+          <table className='min-w-full mt-4  table-auto'>
               <tr>
                   <th id='time'>Time</th>
                   <th id='class'>Class</th>

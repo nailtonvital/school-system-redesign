@@ -4,7 +4,7 @@ import './style.css'
 
 export default function ScoreCard(props) {
   return (
-    <div class="flex justify-between p-4 px-7 card items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-4 justify-between p-4 px-7 card items-center ">
           <div className="score"><span className='emphasys'>{props.score}%</span><span>Score</span></div>
           <div className="numbers"><img src={data} alt="" srcset="" /></div>
           <div className="popular"><span className='emphasys'>{props.popular}º</span><span>Most Popular<br/>Teacher</span></div>

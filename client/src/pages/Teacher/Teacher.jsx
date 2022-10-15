@@ -4,17 +4,29 @@ import TotalClasses from '../../components/TotalClasses/TotalClasses';
 import photo from '../../assets/john.png'
 import ScoreCard from '../../components/ScoreCard/ScoreCard'
 import './style.css'
+import EmailCard from '../../components/EmailCard/EmailCard';
+import GradesTable from '../../components/GradesTable/GradesTable';
 
 
 export default function Teacher() {
   return (
-      <div className="grid grid-cols-3">
-        <PeopleCard className="w-12/12 " photo={photo} name="John Wick" role="Calculus Teacher" phrase="Prefiro morrer do que perder a vida." teacherDate={2001} year={2004}/>
-        
-      <div className='col-span-2 ml-5'>
-          <ScoreCard score={87} popular={29} classes={8451} />
-          <TotalClasses />
-        </div>
+    <div className=" flex">
+      <div className='flex-col mr-5'>
+        <PeopleCard
+          photo={photo}
+          name='John Wick'
+          role='Calculus Teacher'
+          phrase='We cannot solve our problems with the same thinking we used when we created them.'
+          teacherDate={2001}
+          year='2020'
+        />
+        <EmailCard />
       </div>
+      <div id='div'>
+        <ScoreCard score={87} popular={15} classes={8451} />
+        <GradesTable />
+
+      </div>
+    </div>
   )
 }

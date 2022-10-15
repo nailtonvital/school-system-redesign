@@ -7,6 +7,7 @@ import 'react-calendar/dist/Calendar.css';
 import moment from 'moment'
 import './style.css'
 import TodayClasses from '../../components/TodayClasses/TodayClasses';
+import EmailCard from '../../components/EmailCard/EmailCard';
 
 
 export default function StudentDashboard() {
@@ -15,15 +16,15 @@ export default function StudentDashboard() {
    
   return (
     <div className=''>
-      <div className='grid grid-cols-4 gap-4 h-full mb-5'>
+      <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 h-full mb-5'>
         <BimestralCard/>
         <GradeCard />
         <PresenceCard />
         <Calendar onChange={onChange} value={value} className='card flex-1'/>
       </div>
-      <div className='grid grid-cols-4 gap-4'>
+      <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
         <TodayClasses/>
-        <GradeCard />
+        <EmailCard/>
       </div>
     </div>      
   )

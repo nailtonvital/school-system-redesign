@@ -6,6 +6,9 @@ import Navbar from '../../components/Navbar/Navbar';
 import ProfilePage from '../Profile/ProfilePage';
 import Teacher from '../Teacher/Teacher';
 import StudentDashboard from '../StudentDashboard/StudentDashboard';
+import PersonalInfo from '../PersonalInfo/PersonalInfo';
+import ClassesPage from '../ClassesPage/ClassesPage';
+import TeachersTable from '../../components/TeachersTable/TeachersTable';
 
 
 export default function Dashboard() {
@@ -18,8 +21,13 @@ export default function Dashboard() {
         <div>
           <Routes>
               <Route path="me" element={<ProfilePage />} />
-              <Route path="teacher" element={<Teacher />} />
               <Route path="" element={<StudentDashboard />} />
+              <Route path="absences" />
+              <Route path="schedule" />
+              <Route path="lectures" element={<ClassesPage/>} />
+              <Route path="teachers" element={<TeachersTable/>}/>
+              <Route path="teacher" element={<Teacher />} />
+              <Route path="about-me" element={<PersonalInfo/>} />
           </Routes>
         </div>
       </div>
