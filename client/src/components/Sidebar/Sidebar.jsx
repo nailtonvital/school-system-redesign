@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
-import photo from '../../assets/Keenan.jpg'
+import student from "../../assets/student.png"
+import teacher from "../../assets/teacher.png"
+import coordinator from "../../assets/coordinator.png"
 import logo from '../../assets/logo.png'
 import './style.css'
+import { AuthContext } from '../../Context/AuthContext'
 
 
-function Sidebar() {
+
+function Sidebar(props) {
   const [report, setReport] = React.useState(false);
   const [notificationModal, setNotificationModal] = React.useState(false);
 
@@ -17,16 +21,21 @@ function Sidebar() {
        }
     }
 
-    
+  const {name, setAuth} = useContext(AuthContext)
+
+  const handleLogout = ()=>{
+    setAuth(false)
+  }
 
   return (
     <nav class="bg-white w-20 shadow-md h-screen fixed justify-between flex flex-col ">
         <div class="mt-10 mb-10">
           <Link to="me">
             <img
-              src={photo}
+              
               class="rounded-full w-10 h-10 mb-3 mx-auto"
             />
+            <p className='text-center'>{name}</p>
           </Link>
           <div class="mt-10">
             <ul>
@@ -346,7 +355,7 @@ function Sidebar() {
         {/* Sair */}
         <div className="">
           <Link to="/">
-            <span>
+            <span onClick={handleLogout}>
               <svg xmlns="http://www.w3.org/2000/svg" class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M19.002 3h-14c-1.103 0-2 .897-2 2v4h2V5h14v14h-14v-4h-2v4c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.898-2-2-2z"></path><path d="m11 16 5-4-5-4v3.001H3v2h8z"></path></svg>
             </span>
           </Link>

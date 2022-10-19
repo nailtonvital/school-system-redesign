@@ -1,112 +1,46 @@
-import React, {useState} from 'react'
-import Login from '../../components/Login/Login'
+import React, {useContext, useEffect} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import student from "../../assets/student.png"
+import teacher from "../../assets/teacher.png"
+import coordinator from "../../assets/coordinator.png"
+import logo from '../../assets/logo.png'
+import { AuthContext } from '../../Context/AuthContext'
 
-import logo from "../../assets/logo.png"
-import "./login.css"
 
 function LoginPage() {
+  const {auth, setAuth} = useContext(AuthContext)
+  let navigate = useNavigate()
 
+  const handleLogin = ()=>{
+    setAuth(true)
+  }
+  
   return (
-    <div class="block content-center p-6 rounded-lg shadow-lg bg-white max-w-md">
-      <form>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="form-group mb-6">
-            <input type="text" class="form-control
-          block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput123"
-              aria-describedby="emailHelp123" placeholder="First name"/>
-          </div>
-          <div class="form-group mb-6">
-            <input type="text" class="form-control
-          block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput124"
-              aria-describedby="emailHelp124" placeholder="Last name"/>
-          </div>
+    <>
+      <div className="bg-white w-screen h-screen flex-col justify-center">
+        {/* Title */}
+          <h1 className="text-center font-bold text-red-500 text-2xl -mb-2 pt-16">NSA</h1>
+        <h2 className="text-center text-red-500">online</h2>
+
+        <h3 className='text-center mt-8 font-bold'>Entry as</h3>
+        <Link to="dashboard" >
+        <div onClick={handleLogin} className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
+          <img src={student} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
+          <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Student</h3>
         </div>
-        <div class="form-group mb-6">
-          <input type="email" class="form-control block
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        border border-solid border-gray-300
-        rounded
-        transition
-        ease-in-out
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput125"
-            placeholder="Email address" />
+        </Link>
+
+        <div className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
+          <img src={teacher} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
+          <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Teacher</h3>
         </div>
-        <div class="form-group mb-6">
-          <input type="password" class="form-control block
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        border border-solid border-gray-300
-        rounded
-        transition
-        ease-in-out
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput126"
-            placeholder="Password" />
+        <div className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
+          <img src={coordinator} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
+          <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Coordinator</h3>
         </div>
-        <div class="form-group form-check text-center mb-6">
-          <input type="checkbox"
-            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
-            id="exampleCheck25" checked />
-            <label class="form-check-label inline-block text-gray-800" for="exampleCheck25">Subscribe to our newsletter</label>
-        </div>
-        <button type="submit" class="
-      w-full
-      px-6
-      py-2.5
-      bg-blue-600
-      text-white
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      rounded
-      shadow-md
-      hover:bg-blue-700 hover:shadow-lg
-      focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-      active:bg-blue-800 active:shadow-lg
-      transition
-      duration-150
-      ease-in-out">Sign up</button>
-      </form>
-    </div>
+        <img src={logo} className="content-center mt-8 w-24" alt="" />
+      </div>
+    </>
   )
 }
 

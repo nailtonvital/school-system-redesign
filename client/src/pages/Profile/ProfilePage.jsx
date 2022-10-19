@@ -1,9 +1,9 @@
 import React from 'react'
-import PeopleCard from '../../components/PeopleCard/PeopleCard'
 import TotalClasses from '../../components/TotalClasses/TotalClasses';
+import './style.css'
 import photo from '../../assets/Keenan.jpg'
 import ScoreCard from '../../components/ScoreCard/ScoreCard'
-import './style.css'
+import PeopleCard from '../../components/PeopleCard/PeopleCard'
 import EmailCard from '../../components/EmailCard/EmailCard';
 import GradesTable from '../../components/GradesTable/GradesTable';
 import Recommendations from '../../components/Recommendations/Recommendations';
