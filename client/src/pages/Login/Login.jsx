@@ -9,7 +9,8 @@ import { AuthContext } from '../../Context/AuthContext'
 
 function LoginPage() {
   const {auth, setAuth, setRole} = useContext(AuthContext)
-  
+  let navigate = useNavigate()
+
   return (
     <>
       <div className="bg-white w-screen h-screen flex-col justify-center">
@@ -21,7 +22,7 @@ function LoginPage() {
         <Link to="dashboard" >
         <div onClick={()=>{
           setRole("student")
-          handleLogin()
+          setAuth(true)
         }} className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
           <img src={student} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
           <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Student</h3>
@@ -31,7 +32,7 @@ function LoginPage() {
 
           <div onClick={()=>{
           setRole("teacher")
-          handleLogin()
+          setAuth(true)
         }} className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
             <img src={teacher} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
             <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Teacher</h3>
@@ -41,7 +42,7 @@ function LoginPage() {
 
         <div onClick={()=>{
           setRole("coordinator")
-          handleLogin()
+          setAuth(true)
         }} className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
           <img src={coordinator} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
           <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Coordinator</h3>
