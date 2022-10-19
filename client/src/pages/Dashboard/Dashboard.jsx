@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './style.css'
 import Sidebar from '../../components/Sidebar/Sidebar'
+import notFound from '../../components/notFound/notFound';
 import Navbar from '../../components/Navbar/Navbar';
 import ProfilePage from '../Profile/ProfilePage';
 import Teacher from '../Teacher/Teacher';

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import woman from '../../assets/woman.jpg'
 import photo from '../../assets/Keenan.jpg'
 import ScoreCard from '../../components/ScoreCard/ScoreCard'
@@ -9,7 +9,7 @@ import Recommendations from '../../components/Recommendations/Recommendations';
 
 export default function PersonalInfo() {
 
-        const [openTab, setOpenTab] = React.useState(1);
+        const [openTab, setOpenTab] = useState(1);
         return (
             <>
                 <div className="flex flex-wrap">

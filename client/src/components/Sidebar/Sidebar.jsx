@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
-import student from "../../assets/student.png"
+import student from "../../assets/Keenan.jpg"
 import teacher from "../../assets/teacher.png"
 import coordinator from "../../assets/coordinator.png"
 import logo from '../../assets/logo.png'
@@ -13,38 +13,29 @@ function Sidebar(props) {
   const [report, setReport] = React.useState(false);
   const [notificationModal, setNotificationModal] = React.useState(false);
 
-    function handleDark(){
-       if(document.body.classList.contains('dark')){
-           document.body.classList.remove('dark')
-       } else{
-           document.body.classList.add('dark')
-       }
-    }
-
-  const {name, setAuth} = useContext(AuthContext)
+  const {name, setAuth, role} = useContext(AuthContext)
 
   const handleLogout = ()=>{
     setAuth(false)
   }
 
   return (
-    <nav class="bg-white w-20 shadow-md h-screen fixed justify-between flex flex-col ">
-        <div class="mt-10 mb-10">
+    <nav className="bg-white w-20 shadow-md h-screen fixed justify-between flex flex-col ">
+        <div className="mt-10 mb-10">
           <Link to="me">
             <img
-              
-              class="rounded-full w-10 h-10 mb-3 mx-auto"
+              src={role ? role === "student" ? student : role === "teacher"? teacher: role === "coordinator" ? coordinator : none : none}
+              className="rounded-full w-10 h-10 mb-3 mx-auto"
             />
-            <p className='text-center'>{name}</p>
           </Link>
-          <div class="mt-10">
+          <div className="mt-10">
             <ul>
               {/* Dashboard */}
-              <li class="mb-6">
+              <li className="mb-6">
                 <Link to="">
-                  <span>
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard">
                     <svg
-                      class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                      className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -58,11 +49,11 @@ function Sidebar(props) {
               </li>
 
             {/* Faltas */}
-            <li class="mb-6">
+            <li className="mb-6">
                 <Link to="absences">
-                  <span>
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Absences">
                     <svg
-                      class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                      className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -84,27 +75,27 @@ function Sidebar(props) {
                 </Link>
               </li>
               {/* Relogio */}
-            <li class="mb-6">
+            <li className="mb-6">
               <Link to="schedule">
-                <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M13 7h-2v6h6v-2h-4z"></path></svg>
+                <span data-bs-toggle="tooltip" data-bs-placement="right" title="Schedule">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M13 7h-2v6h6v-2h-4z"></path></svg>
 
                 </span>
               </Link>
             </li>
               {/* Lectures */}
-              <li class="mb-6">
+              <li className="mb-6">
                 <Link to="lectures">
-                  <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M4 21h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zm0-2V7h16l.001 12H4z"></path></svg>
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Lectures">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M4 21h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zm0-2V7h16l.001 12H4z"></path></svg>
                 </span>
                 </Link>
               </li>
             {/* Professores */}
-            <li class="mb-6">
+            <li className="mb-6">
                 <Link to="teachers">
-                  <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M16.604 11.048a5.67 5.67 0 0 0 .751-3.44c-.179-1.784-1.175-3.361-2.803-4.44l-1.105 1.666c1.119.742 1.8 1.799 1.918 2.974a3.693 3.693 0 0 1-1.072 2.986l-1.192 1.192 1.618.475C18.951 13.701 19 17.957 19 18h2c0-1.789-.956-5.285-4.396-6.952z"></path><path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path></svg>
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Teachers">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M16.604 11.048a5.67 5.67 0 0 0 .751-3.44c-.179-1.784-1.175-3.361-2.803-4.44l-1.105 1.666c1.119.742 1.8 1.799 1.918 2.974a3.693 3.693 0 0 1-1.072 2.986l-1.192 1.192 1.618.475C18.951 13.701 19 17.957 19 18h2c0-1.789-.956-5.285-4.396-6.952z"></path><path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path></svg>
                   </span>
                 </Link>
               </li>
@@ -112,11 +103,11 @@ function Sidebar(props) {
             
 
             {/* informações pessoais */}
-            <li class="mb-6">
+            <li className="mb-6">
               <Link to="about-me">
-                <span>
+                <span data-bs-toggle="tooltip" data-bs-placement="right" title="About Me">
                   <svg xmlns="http://www.w3.org/2000/svg"
-                    class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                    className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24" >
@@ -134,8 +125,8 @@ function Sidebar(props) {
           {/* Alerta */}
         <div className="mb-4">
             <a onClick={() => setReport(true)}>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M11.953 2C6.465 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.493 2 11.953 2zM12 20c-4.411 0-8-3.589-8-8s3.567-8 7.953-8C16.391 4 20 7.589 20 12s-3.589 8-8 8z"></path><path d="M11 7h2v7h-2zm0 8h2v2h-2z"></path></svg>
+            <span data-bs-toggle="tooltip" data-bs-placement="right" title="Report">
+              <svg xmlns="http://www.w3.org/2000/svg" className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M11.953 2C6.465 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.493 2 11.953 2zM12 20c-4.411 0-8-3.589-8-8s3.567-8 7.953-8C16.391 4 20 7.589 20 12s-3.589 8-8 8z"></path><path d="M11 7h2v7h-2zm0 8h2v2h-2z"></path></svg>
             </span>
           </a>
         </div>
@@ -163,13 +154,13 @@ function Sidebar(props) {
                     </div>
                     {/*body*/}
                     <div className="relative p-6 flex-auto">
-                      <div class=" justify-center">
-                        <div class="mb-3 xl:w-96">
-                          <label class="form-label inline-block mb-0 text-gray-700"
+                      <div className=" justify-center">
+                        <div className="mb-3 xl:w-96">
+                          <label className="form-label inline-block mb-0 text-gray-700"
                           >Subject</label
                           >
-                          <div class="mb-3 xl:w-96">
-                          <select class="form-select appearance-none
+                          <div className="mb-3 xl:w-96">
+                          <select className="form-select appearance-none
                             block
                             w-full
                             px-3
@@ -191,25 +182,25 @@ function Sidebar(props) {
                           </select>
                         </div>
                         </div>
-                        <div class="flex justify-left">
+                        <div className="flex justify-left">
                           <div>
-                            <div class="form-check flex">
-                              <input class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault20" checked />
+                            <div className="form-check flex">
+                              <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault20" checked />
                               Anonymous
                             </div>
-                            <div class="form-check flex">
-                              <input class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault10"/>
+                            <div className="form-check flex">
+                              <input className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault10"/>
                               Not anonymous
                             </div>
                           </div>
                         </div>
-                        <div class="flex justify-center mt-3">
-                          <div class="mb-3 xl:w-96">
-                            <label for="exampleFormControlTextarea1" class="form-label inline-block mb-0 text-gray-700"
+                        <div className="flex justify-center mt-3">
+                          <div className="mb-3 xl:w-96">
+                            <label for="exampleFormControlTextarea1" className="form-label inline-block mb-0 text-gray-700"
                             >Type your message</label
                             >
                             <textarea
-                              class="
+                              className="
                                     form-control
                                     block
                                     w-full
@@ -259,9 +250,9 @@ function Sidebar(props) {
           ) : null}
         {/* Notificações */}
         <Link onClick={()=>{setNotificationModal(true)}} className="mb-4">
-          <span>
+          <span data-bs-toggle="tooltip" data-bs-placement="right" title="Notifications">
             <svg
-              class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500 "
+              className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500 "
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -298,7 +289,7 @@ function Sidebar(props) {
                       </button>
                     </div>
                     {/*body*/}
-                    <div class="overflow-auto h-80">
+                    <div className="overflow-auto h-80">
                       <div className="flex-col card mx-2 my-2 p-5">
                         <div className="flex">
                         <div className="">
@@ -355,8 +346,8 @@ function Sidebar(props) {
         {/* Sair */}
         <div className="">
           <Link to="/">
-            <span onClick={handleLogout}>
-              <svg xmlns="http://www.w3.org/2000/svg" class="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M19.002 3h-14c-1.103 0-2 .897-2 2v4h2V5h14v14h-14v-4h-2v4c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.898-2-2-2z"></path><path d="m11 16 5-4-5-4v3.001H3v2h8z"></path></svg>
+            <span onClick={handleLogout} data-bs-toggle="tooltip" data-bs-placement="right" title="Exit">
+              <svg xmlns="http://www.w3.org/2000/svg" className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500" width="24" height="24" viewBox="0 0 24 24" ><path d="M19.002 3h-14c-1.103 0-2 .897-2 2v4h2V5h14v14h-14v-4h-2v4c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.898-2-2-2z"></path><path d="m11 16 5-4-5-4v3.001H3v2h8z"></path></svg>
             </span>
           </Link>
         </div>
