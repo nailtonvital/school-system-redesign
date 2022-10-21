@@ -9,37 +9,39 @@ export default function GradesTable(props) {
         <h3 className='font-medium leading-tight text-xl mt-0'>Grades</h3>
         <div className='yearSelect'>
           <h5>Year</h5>
-          <select name="" id="">
-            <option value="3">3°</option>
+          <select name="" id="" className='ml-2 px-2 py-1 rounded-full bg-white border border-slate-300'>
+            <option className='font-sans' value="3">1°</option>
+            <option className='font-sans' value="3">2°</option>
+            <option className='font-sans' value="3">3°</option>
           </select>
         </div>
       </div>
-      <table className='table-auto text-left '>
+      <table className='table-auto text-left'>
         <tr>
-          <th className='text-sm font-medium text-gray-900  text-left'>Curriculum Component</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>1°B</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>2°B</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>3°B</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>4°B</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>Final</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>Classes</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>Absences</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>Freq</th>
-          <th className='text-sm font-medium text-gray-900  text-left'>Situation</th>
+          <th className='text-sm font-medium text-gray-900 '>Curriculum Component</th>
+          <th className='text-sm font-medium text-gray-900 '>1°B</th>
+          <th className='text-sm font-medium text-gray-900 '>2°B</th>
+          <th className='text-sm font-medium text-gray-900 '>3°B</th>
+          <th className='text-sm font-medium text-gray-900 '>4°B</th>
+          <th className='text-sm font-medium text-gray-900 '>Final</th>
+          <th className='text-sm font-medium text-gray-900 '>Classes</th>
+          <th className='text-sm font-medium text-gray-900 '>Absences</th>
+          <th className='text-sm font-medium text-gray-900 '>Freq</th>
+          <th className='text-sm font-medium text-gray-900 '>Situation</th>
         </tr>
         {lines.map((i,index)=>{
           return (
             <tr className='bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 cursor-pointer' key={index}>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>Web Programming</td>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>R</td>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>B</td>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>B</td>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>B</td>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>--</td>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>78</td>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>8</td>
-              <td className='text-sm text-gray-900 font-bold  whitespace-nowrap'>84,79%</td>
-              <td className='text-sm text-green-500 font-bold  whitespace-nowrap text-center'>⬤</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>Web Programming</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>R</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>B</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>B</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>B</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>--</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>78</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>8</td>
+              <td className='text-sm text-gray-900 font-bold py-4 whitespace-nowrap'>84,79%</td>
+              <td className='text-sm text-green-500 font-bold py-4 whitespace-nowrap text-center'>⬤</td>
             </tr>
           )
         })}

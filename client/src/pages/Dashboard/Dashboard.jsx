@@ -8,16 +8,15 @@ import ProfilePage from '../Profile/ProfilePage';
 import Teacher from '../Teacher/Teacher';
 import StudentDashboard from '../StudentDashboard/StudentDashboard';
 import PersonalInfo from '../PersonalInfo/PersonalInfo';
-import ClassesPage from '../ClassesPage/ClassesPage';
 import TeachersTable from '../../components/TeachersTable/TeachersTable';
+import StudentsTable from '../../components/StudentsTable/StudentsTable';
+import LecturesTable from '../../components/LecturesTable/LecturesTable';
+import ClassesTable from '../../components/ClassesTable/ClassesTable';
+import PresenceData from '../../components/PresenceData/PresenceData';
 
 
 
 export default function Dashboard() {
-
-
-
-
   return (
 
       <div className='flex flex-row '>
@@ -28,10 +27,12 @@ export default function Dashboard() {
             <Routes>
                 <Route path="me" element={<ProfilePage />} />
                 <Route path="" element={<StudentDashboard />} />
-                <Route path="absences" />
+                <Route path="absences" element={<PresenceData/>}/>
                 <Route path="schedule" />
-                <Route path="lectures" element={<ClassesPage/>} />
+                <Route path="lectures" element={<LecturesTable/>} />
+                <Route path="classes" element={<ClassesTable/>} />
                 <Route path="teachers" element={<TeachersTable/>}/>
+                <Route path="students" element={<StudentsTable/>}/>
                 <Route path="teacher" element={<Teacher />} />
                 <Route path="about-me" element={<PersonalInfo/>} />
             </Routes>

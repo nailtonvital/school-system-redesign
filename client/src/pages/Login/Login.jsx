@@ -48,7 +48,6 @@ function LoginPage() {
           <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Coordinator</h3>
         </div>
         </Link>
-        <img src={logo} className="content-center mt-8 w-24" alt="" />
       </div>
     </>
   )
