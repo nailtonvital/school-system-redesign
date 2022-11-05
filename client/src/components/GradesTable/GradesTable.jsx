@@ -4,7 +4,7 @@ import './style.css'
 export default function GradesTable(props) {
   const lines = [1,2,3,4,5,6,7,8,9,12,121]
   return (
-    <div className='mt-5 card p-5 mb-7 overflow-x-auto'>
+    <div className='mt-5 card p-5 mb-7  overflow-x-auto'>
       <div className="flex justify-between mb-4">
         <h3 className='font-medium leading-tight text-xl mt-0'>Grades</h3>
         <div className='yearSelect'>
