@@ -8,7 +8,7 @@ export default function TeacherDashboard() {
     const [value, onChange] = useState(new Date());
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 ">
         <Smallcard roll={true} numbers={5} />
         <Smallcard disapproval={true} numbers={8} />
         <Smallcard note={true} text={"B"} />

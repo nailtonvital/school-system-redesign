@@ -62,9 +62,9 @@ const data = {
           <Smallcard disapproval={true} numbers={13} />
           <Smallcard dropout={true} numbers={9} />
         </div>
-        <div className="card p-5 pl-5 mt-5">
+        <div className="card p-5 pl-5 h-96 w-96 pb-10 mt-5">
             <h3 className='font-bold text-xl'>Absences</h3>
-          <Bar data={data} className="" />
+          <Bar data={data} options={options} className="" />
         </div>
       </div>
     </>

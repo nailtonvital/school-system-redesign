@@ -18,7 +18,7 @@ function Sidebar(props) {
   };
 
   return (
-    <nav className="bg-white w-20 shadow-md h-screen fixed justify-between flex flex-col ">
+    <nav className="bg-white w-20 px-2 shadow-md h-screen fixed text-center justify-between flex flex-col ">
       <div className="mt-10 mb-10">
         <Link to="me">
           <img
@@ -39,7 +39,7 @@ function Sidebar(props) {
         <div className="mt-10">
           <ul>
             {/* Dashboard */}
-            <li className="mb-6">
+            <li className="mb-3 group">
               <Link to="">
                 <span
                   data-bs-toggle="tooltip"
@@ -47,7 +47,7 @@ function Sidebar(props) {
                   title="Dashboard"
                 >
                   <svg
-                    className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                    className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -56,13 +56,16 @@ function Sidebar(props) {
                     <path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm5 2h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm1-6h4v4h-4V5zM3 20a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6zm2-5h4v4H5v-4zm8 5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6zm2-5h4v4h-4v-4z"></path>
                   </svg>
                 </span>
+                <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                  Dashboard
+                </span>
               </Link>
             </li>
 
             {/* Faltas/ Chamada */}
             {role ? (
               role === "student" ? (
-                <li className="mb-6">
+                <li className="mb-3 group">
                   <Link to="absences">
                     <span
                       data-bs-toggle="tooltip"
@@ -70,7 +73,7 @@ function Sidebar(props) {
                       title="Absences"
                     >
                       <svg
-                        className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                        className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -79,10 +82,13 @@ function Sidebar(props) {
                         <path d="M20.29 8.29 16 12.58l-1.3-1.29-1.41 1.42 2.7 2.7 5.72-5.7zM4 8a3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4 3.91 3.91 0 0 0-4 4zm6 0a1.91 1.91 0 0 1-2 2 1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2zM4 18a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v1h2v-1a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5v1h2z"></path>
                       </svg>
                     </span>
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                      Absences
+                    </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
-                <li className="mb-6">
+                <li className="mb-3 group">
                   <Link to="attendance">
                     <span
                       data-bs-toggle="tooltip"
@@ -90,7 +96,7 @@ function Sidebar(props) {
                       title="Attendance"
                     >
                       <svg
-                        className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                        className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -100,13 +106,16 @@ function Sidebar(props) {
                         <path d="M15.535 5.464 14.121 6.88C14.688 7.445 15 8.198 15 9s-.312 1.555-.879 2.12l1.414 1.416C16.479 11.592 17 10.337 17 9s-.521-2.592-1.465-3.536z"></path>
                       </svg>
                     </span>
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                      Attendance
+                    </span>
                   </Link>
                 </li>
               ) : role === "coordinator" ? null : null
             ) : null}
 
             {/* Relogio */}
-            <li className="mb-6">
+            <li className="mb-3 group">
               <Link to="schedule">
                 <span
                   data-bs-toggle="tooltip"
@@ -118,18 +127,21 @@ function Sidebar(props) {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                    className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                   >
                     <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
                     <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
                   </svg>
+                </span>
+                <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                  Schedule
                 </span>
               </Link>
             </li>
             {/* Lectures/Classes */}
             {role ? (
               role === "student" ? (
-                <li className="mb-6">
+                <li className="mb-3 group">
                   <Link to="lectures">
                     <span
                       data-bs-toggle="tooltip"
@@ -138,7 +150,7 @@ function Sidebar(props) {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                        className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -146,10 +158,13 @@ function Sidebar(props) {
                         <path d="M4 21h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zm0-2V7h16l.001 12H4z"></path>
                       </svg>
                     </span>
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                      Lectures
+                    </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
-                <li className="mb-6">
+                <li className="mb-3 group">
                   <Link to="classes">
                     <span
                       data-bs-toggle="tooltip"
@@ -157,7 +172,7 @@ function Sidebar(props) {
                       title="Classes"
                     >
                       <svg
-                        className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                        className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -167,6 +182,9 @@ function Sidebar(props) {
                         <path d="M7 7h1.998v2H7zm4 0h6v2h-6zm-4 4h1.998v2H7zm4 0h6v2h-6zm-4 4h1.998v2H7zm4 0h6v2h-6z"></path>
                       </svg>
                     </span>
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                      Classes
+                    </span>
                   </Link>
                 </li>
               ) : role === "coordinator" ? null : null
@@ -175,7 +193,7 @@ function Sidebar(props) {
             {/* Professores/Alunos */}
             {role ? (
               role === "student" ? (
-                <li className="mb-6">
+                <li className="mb-3 group">
                   <Link to="teachers">
                     <span
                       data-bs-toggle="tooltip"
@@ -184,7 +202,7 @@ function Sidebar(props) {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                        className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -193,10 +211,13 @@ function Sidebar(props) {
                         <path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path>
                       </svg>
                     </span>
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                      Teachers
+                    </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
-                <li className="mb-6">
+                <li className="mb-3 group">
                   <Link to="students">
                     <span
                       data-bs-toggle="tooltip"
@@ -205,7 +226,7 @@ function Sidebar(props) {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                        className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -214,11 +235,14 @@ function Sidebar(props) {
                         <path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path>
                       </svg>
                     </span>
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                      Students
+                    </span>
                   </Link>
                 </li>
               ) : role === "coordinator" ? (
                 <>
-                  <li className="mb-6">
+                  <li className="mb-3 group">
                     <Link to="teachers">
                       <span
                         data-bs-toggle="tooltip"
@@ -227,7 +251,7 @@ function Sidebar(props) {
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                          className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
@@ -238,9 +262,12 @@ function Sidebar(props) {
                           <path d="M20.21 7.73a1 1 0 0 0-1-.73h-4.5a1 1 0 0 0-1 .73L12 14h2l-1 4h2v4h4v-4h2l-1-4h2z"></path>
                         </svg>
                       </span>
+                      <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                        Teachers
+                      </span>
                     </Link>
                   </li>
-                  <li className="mb-6">
+                  <li className="mb-3 group">
                     <Link to="students">
                       <span
                         data-bs-toggle="tooltip"
@@ -249,7 +276,7 @@ function Sidebar(props) {
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                          className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
@@ -258,6 +285,9 @@ function Sidebar(props) {
                           <path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path>
                         </svg>
                       </span>
+                      <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                        Students
+                      </span>
                     </Link>
                   </li>
                 </>
@@ -265,7 +295,7 @@ function Sidebar(props) {
             ) : null}
 
             {/* informações pessoais */}
-            <li className="mb-6">
+            <li className="mb-3 group">
               <Link to="about-me">
                 <span
                   data-bs-toggle="tooltip"
@@ -273,7 +303,7 @@ function Sidebar(props) {
                   title="About Me"
                 >
                   <svg
-                    className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                    className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -282,6 +312,9 @@ function Sidebar(props) {
                     <path d="M12 2A10.13 10.13 0 0 0 2 12a10 10 0 0 0 4 7.92V20h.1a9.7 9.7 0 0 0 11.8 0h.1v-.08A10 10 0 0 0 22 12 10.13 10.13 0 0 0 12 2zM8.07 18.93A3 3 0 0 1 11 16.57h2a3 3 0 0 1 2.93 2.36 7.75 7.75 0 0 1-7.86 0zm9.54-1.29A5 5 0 0 0 13 14.57h-2a5 5 0 0 0-4.61 3.07A8 8 0 0 1 4 12a8.1 8.1 0 0 1 8-8 8.1 8.1 0 0 1 8 8 8 8 0 0 1-2.39 5.64z"></path>
                     <path d="M12 6a3.91 3.91 0 0 0-4 4 3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4zm0 6a1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2 1.91 1.91 0 0 1-2 2z"></path>
                   </svg>
+                </span>
+                <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                  About Me
                 </span>
               </Link>
             </li>
@@ -300,7 +333,7 @@ function Sidebar(props) {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                  className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -313,7 +346,7 @@ function Sidebar(props) {
           </div>
           {report ? (
             <>
-              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 text-left outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
                   {/*content*/}
                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -330,7 +363,7 @@ function Sidebar(props) {
                       </button>
                     </div>
                     {/*body*/}
-                    <div className="relative p-6 flex-auto">
+                    <div className="relative p-6  flex-auto">
                       <div className=" justify-center">
                         <div className="mb-3 xl:w-96">
                           <label className="form-label inline-block mb-0 text-gray-700">
@@ -338,7 +371,7 @@ function Sidebar(props) {
                           </label>
                           <div className="mb-3 xl:w-96">
                             <select
-                              className="form-select appearance-none
+                              className="form-select 
                             block
                             w-full
                             px-3
@@ -355,10 +388,10 @@ function Sidebar(props) {
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                               aria-label="Default select example"
                             >
-                              <option selected>Select the subject</option>
-                              <option value="1">Bug</option>
-                              <option value="2">Teacher</option>
-                              <option value="3">Other</option>
+                              <option className="font-normal" selected>Select the subject</option>
+                              <option className="font-normal" value="1">Bug</option>
+                              <option className="font-normal" value="2">Teacher</option>
+                              <option className="font-normal" value="3">Other</option>
                             </select>
                           </div>
                         </div>
@@ -429,7 +462,7 @@ function Sidebar(props) {
                         Cancel
                       </button>
                       <button
-                        className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        className="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
                         onClick={() => setReport(false)}
                       >
@@ -455,7 +488,7 @@ function Sidebar(props) {
               title="Notifications"
             >
               <svg
-                className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500 "
+                className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500 "
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -479,12 +512,13 @@ function Sidebar(props) {
                     <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                       <h3 className="text-3xl font-semibold">Notifications</h3>
                       <button onClick={() => setNotificationModal(false)}>
-                        <span className=" text-black opacity-5 -pt-3 mr-4 hover:opacity-100 h-7 w-7 text-2xl block outline-none focus:outline-none">
+                        <span className=" text-red-500 opacity-10 -pt-3 mr-4 hover:opacity-100 h-7 w-7 text-2xl block outline-none focus:outline-none">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="40"
                             height="40"
                             viewBox="0 0 24 24"
+                            className="fill-current"
                           >
                             <path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path>
                             <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path>
@@ -585,7 +619,7 @@ function Sidebar(props) {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="fill-current h-5 w-5 text-gray-400 mx-auto hover:text-red-500"
+                className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
