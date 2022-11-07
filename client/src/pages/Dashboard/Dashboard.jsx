@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './style.css'
 import Sidebar from '../../components/Sidebar/Sidebar'
@@ -14,10 +14,14 @@ import LecturesTable from '../../components/LecturesTable/LecturesTable';
 import ClassesTable from '../../components/ClassesTable/ClassesTable';
 import PresenceData from '../../components/PresenceData/PresenceData';
 import Attendance from '../Attendance';
-
+import { AuthContext } from "../../Context/AuthContext";
+import TeacherDashboard from '../TeacherDashboard';
+import CorDashboard from '../CorDashboard';
+import Schedule from '../Schedule';
 
 
 export default function Dashboard() {
+  const { role } = useContext(AuthContext);
   return (
     <div className="flex flex-row ">
       <Sidebar type="teacher" />
@@ -25,11 +29,16 @@ export default function Dashboard() {
         <Navbar />
         <div>
           <Routes>
-            <Route path="me" element={<ProfilePage />} />
-            <Route path="" element={<StudentDashboard />} />
+            <Route path="student" element={<ProfilePage />} />
+            <Route
+              path=""
+              element={
+                role === "student" ? <StudentDashboard /> : role === "teacher" ? <TeacherDashboard/> : <CorDashboard/>
+              }
+            />
             <Route path="absences" element={<PresenceData />} />
-            <Route path="schedule" />
-            <Route path="attendance" element={<Attendance/>} />
+            <Route path="schedule" element={<Schedule/>}/>
+            <Route path="attendance" element={<Attendance />} />
             <Route path="lectures" element={<LecturesTable />} />
             <Route path="classes" element={<ClassesTable />} />
             <Route path="teachers" element={<TeachersTable />} />

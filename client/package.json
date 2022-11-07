@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@devexpress/dx-react-core": "^3.0.6",
+    "@devexpress/dx-react-scheduler": "^3.0.6",
+    "@devexpress/dx-react-scheduler-material-ui": "^3.0.6",
+    "@popperjs/core": "2.9.1",
     "chart.js": "^3.9.1",
+    "faker": "^5.5.3",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-calendar": "^3.9.0",

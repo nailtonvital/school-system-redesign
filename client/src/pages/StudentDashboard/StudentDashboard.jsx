@@ -8,6 +8,7 @@ import moment from 'moment'
 import './style.css'
 import TodayClasses from '../../components/TodayClasses/TodayClasses';
 import EmailCard from '../../components/EmailCard/EmailCard';
+import Schedule from '../Schedule';
 
 
 export default function StudentDashboard() {
@@ -23,8 +24,8 @@ export default function StudentDashboard() {
         <Calendar onChange={onChange} value={value} className='card flex-1'/>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
-        <TodayClasses/>
-        <EmailCard/>
+        <Schedule />
+        <EmailCard benefits={true}/>
       </div>
     </div>      
   )

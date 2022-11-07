@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { AuthContext } from "../../Context/AuthContext";
 
 export default function TodayClasses() {
+    const { role } = useContext(AuthContext);
     const lines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 121]
   return (
       <div className='col-span-3 p-5 card'>
@@ -9,18 +11,33 @@ export default function TodayClasses() {
           <table className='min-w-full mt-4 table-auto text-left'>
               <tr>
                   <th className='text-sm font-medium text-gray-900 pl-6 py-4' >Time</th>
-                  <th className='text-sm font-medium text-gray-900 pl-6 py-4' >Class</th>
-                  <th className='text-sm font-medium text-gray-900 pl-6 py-4' >Teacher</th>
+                  {role === "student" ? (<>
+                    <th className='text-sm font-medium text-gray-900 pl-6 py-4' >Class</th>
+                    <th className='text-sm font-medium text-gray-900 pl-6 py-4' >Teacher</th>
+                  </>) : (<th className='text-sm font-medium text-gray-900 pl-6 py-4' >Class</th>)}
               </tr>
               {lines.map(i => {
                   return (
-                      <tr className='bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 cursor-pointer'>
-                          <td className='text-sm text-gray-900 font-bold pl-6 py-4'>07:00</td>
-                          <td className='text-sm text-gray-900 font-bold pl-6 py-4'>Web Programming</td>
-                          <td className='text-sm text-gray-900 font-bold pl-6 py-4'>Peter Parker</td>
-                          
-                      </tr>
-                  )
+                    <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 cursor-pointer">
+                      <td className="text-sm text-gray-900 font-bold pl-6 py-4">
+                        07:00
+                      </td>
+                      {role === "student" ? (
+                        <>
+                          <td className="text-sm text-gray-900 font-bold pl-6 py-4">
+                            Web Programming
+                          </td>
+                          <td className="text-sm text-gray-900 font-bold pl-6 py-4">
+                            Peter Parker
+                          </td>
+                        </>
+                      ) : (
+                        <td className="text-sm text-gray-900 font-bold pl-6 py-4">
+                          3ºDS
+                        </td>
+                      )}
+                    </tr>
+                  );
               })}
 
 
