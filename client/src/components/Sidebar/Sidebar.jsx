@@ -324,7 +324,7 @@ function Sidebar(props) {
       <div className="mb-4">
         <div className="mb-4">
           {/* Alerta */}
-          <div className="mb-4">
+          <div className="mb-4 group">
             <a onClick={() => setReport(true)}>
               <span
                 data-bs-toggle="tooltip"
@@ -341,6 +341,9 @@ function Sidebar(props) {
                   <path d="M11.953 2C6.465 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.493 2 11.953 2zM12 20c-4.411 0-8-3.589-8-8s3.567-8 7.953-8C16.391 4 20 7.589 20 12s-3.589 8-8 8z"></path>
                   <path d="M11 7h2v7h-2zm0 8h2v2h-2z"></path>
                 </svg>
+              </span>
+              <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                Report
               </span>
             </a>
           </div>
@@ -388,10 +391,18 @@ function Sidebar(props) {
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                               aria-label="Default select example"
                             >
-                              <option className="font-normal" selected>Select the subject</option>
-                              <option className="font-normal" value="1">Bug</option>
-                              <option className="font-normal" value="2">Teacher</option>
-                              <option className="font-normal" value="3">Other</option>
+                              <option className="font-normal" selected>
+                                Select the subject
+                              </option>
+                              <option className="font-normal" value="1">
+                                Bug
+                              </option>
+                              <option className="font-normal" value="2">
+                                Teacher
+                              </option>
+                              <option className="font-normal" value="3">
+                                Other
+                              </option>
                             </select>
                           </div>
                         </div>
@@ -480,7 +491,7 @@ function Sidebar(props) {
             onClick={() => {
               setNotificationModal(true);
             }}
-            className="mb-4"
+            className="mb-4 group"
           >
             <span
               data-bs-toggle="tooltip"
@@ -500,6 +511,9 @@ function Sidebar(props) {
                   fill="currentColor"
                 />
               </svg>
+            </span>
+            <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+              Messages
             </span>
           </Link>
           {notificationModal ? (
@@ -609,7 +623,7 @@ function Sidebar(props) {
           ) : null}
         </div>
         {/* Sair */}
-        <div className="">
+        <div className="group">
           <Link to="/">
             <span
               onClick={handleLogout}
@@ -627,6 +641,9 @@ function Sidebar(props) {
                 <path d="M19.002 3h-14c-1.103 0-2 .897-2 2v4h2V5h14v14h-14v-4h-2v4c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.898-2-2-2z"></path>
                 <path d="m11 16 5-4-5-4v3.001H3v2h8z"></path>
               </svg>
+            </span>
+            <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+              Exit
             </span>
           </Link>
         </div>
