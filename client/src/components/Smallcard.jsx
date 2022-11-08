@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Smallcard(props) {
   return (
-    <div className="card p-5 col-span-1 ">
+    <div className="card p-4 col-span-1 ">
       {props.teacher ? (
         <div className="flex justify-left items-center">
           <svg

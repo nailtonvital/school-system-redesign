@@ -17,7 +17,7 @@ import Attendance from '../Attendance';
 import { AuthContext } from "../../Context/AuthContext";
 import TeacherDashboard from '../TeacherDashboard';
 import CorDashboard from '../CorDashboard';
-import Schedule from '../Schedule';
+import SchedulePage from '../SchedulePage';
 
 
 export default function Dashboard() {
@@ -37,7 +37,7 @@ export default function Dashboard() {
               }
             />
             <Route path="absences" element={<PresenceData />} />
-            <Route path="schedule" element={<Schedule/>}/>
+            <Route path="schedule" element={<SchedulePage/>}/>
             <Route path="attendance" element={<Attendance />} />
             <Route path="lectures" element={<LecturesTable />} />
             <Route path="classes" element={<ClassesTable />} />

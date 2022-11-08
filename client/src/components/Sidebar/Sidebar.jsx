@@ -39,7 +39,7 @@ function Sidebar(props) {
         <div className="mt-10">
           <ul>
             {/* Dashboard */}
-            <li className="mb-3 group">
+            <li className="mb-3 group ">
               <Link to="">
                 <span
                   data-bs-toggle="tooltip"

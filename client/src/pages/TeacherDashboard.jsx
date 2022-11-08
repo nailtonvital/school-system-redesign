@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Smallcard from "../components/Smallcard";
 import TodayClasses from '../components/TodayClasses/TodayClasses';
 import { Calendar } from 'react-calendar';
-import Schedule from './Schedule';
+import Schedule from '../components/Schedule';
 
 export default function TeacherDashboard() {
     const [value, onChange] = useState(new Date());

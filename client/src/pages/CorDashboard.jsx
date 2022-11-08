@@ -41,14 +41,16 @@ const data = {
   labels,
   datasets: [
     {
-      label: 'Presence',
+      label: "Presence",
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      backgroundColor: "rgba(177, 16, 22, 0.7)",
+      borderRadius: 3,
     },
     {
-      label: 'Absence',
+      label: "Absence",
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      backgroundColor: "rgba(16, 80, 177, 0.7)",
+      borderRadius: 3,
     },
   ],
 };
@@ -62,9 +64,15 @@ const data = {
           <Smallcard disapproval={true} numbers={13} />
           <Smallcard dropout={true} numbers={9} />
         </div>
-        <div className="card p-5 pl-5 h-96 w-96 pb-10 mt-5">
-            <h3 className='font-bold text-xl'>Absences</h3>
-          <Bar data={data} options={options} className="" />
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 ">
+          <div className="card p-5 pl-5 h-96 w-full pb-10 mt-5">
+            <h3 className="font-bold text-xl">Absences x Presences</h3>
+            <Bar data={data} options={options} className="" />
+          </div>
+          <div className="card p-5 pl-5 h-96 w-full pb-10 mt-5">
+            <h3 className="font-bold text-xl">Absences x Presences</h3>
+            <Bar data={data} options={options} className="" />
+          </div>
         </div>
       </div>
     </>

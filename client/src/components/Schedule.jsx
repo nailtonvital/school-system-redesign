@@ -28,7 +28,7 @@ const schedulerData = [
 
 export default function Schedule() {
     return (
-      <Paper className="col-span-3">
+      <Paper className="col-span-3 relative">
         <Scheduler data={schedulerData}>
           <ViewState currentDate={currentDate} />
           <DayView startDayHour={9} endDayHour={14} />

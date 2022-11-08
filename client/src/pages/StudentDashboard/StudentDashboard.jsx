@@ -8,7 +8,7 @@ import moment from 'moment'
 import './style.css'
 import TodayClasses from '../../components/TodayClasses/TodayClasses';
 import EmailCard from '../../components/EmailCard/EmailCard';
-import Schedule from '../Schedule';
+import Schedule from "../../components/Schedule";
 
 
 export default function StudentDashboard() {

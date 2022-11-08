@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import student from "../../assets/student.png"
 import teacher from "../../assets/teacher.png"
 import coordinator from "../../assets/coordinator.png"
-import logo from '../../assets/logo.png'
+import logoNsa from '../../assets/logo-nsa.png'
 import { AuthContext } from '../../Context/AuthContext'
 
 
@@ -15,8 +15,7 @@ function LoginPage() {
     <>
       <div className="bg-white w-screen h-screen flex-col justify-center">
         {/* Title */}
-          <h1 className="text-center font-bold text-red-500 text-2xl -mb-2 pt-16">NSA</h1>
-        <h2 className="text-center text-red-500">online</h2>
+          <img src={logoNsa} className="mx-auto h-28 p-7" alt="logo nsa" />
 
         <h3 className='text-center mt-8 font-bold'>Entry as</h3>
         <Link to="dashboard" >
