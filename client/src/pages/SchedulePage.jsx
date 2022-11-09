@@ -76,10 +76,126 @@ export default function SchedulePage() {
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <Schedule />
                 </div>
-                <div
-                  className={openTab === 2 ? "block" : "hidden"}
-                  id="link2"
-                ></div>
+                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                  <h2 className="font-bold mt-2 text-2">Your Schedule</h2>
+                  <div className="overflow-x-auto">
+                    <table className="table-auto  mt-5 border ">
+                      <thead>
+                        <tr>
+                          <th className="p-3 border-r">Monday</th>
+                          <th className="p-3 border-r">Tuesday</th>
+                          <th className="p-3 border-r">Wednesday</th>
+                          <th className="p-3 border-r">Thursday</th>
+                          <th className="p-3 border-r">Friday</th>
+                        </tr>
+                      </thead>
+                      <tbody className="font-normal capitalize">
+                        <tr className="bg-white border-0 transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Math
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Design
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Laws
+                          </td>
+                        </tr>
+                        <tr className="bg-white border-0 transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            sociology
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Math
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Day Trading
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            laws
+                          </td>
+                        </tr>
+                        <tr className="bg-white border-0 transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            English
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            sociology
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            neurodesign
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Day Trading
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                        </tr>
+                        <tr className="bg-white border-0 transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            English
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            neurodesign
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                        </tr>
+                        <tr className="bg-white border-0 transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 break-words">
+                            web <br /> programming
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Spanish
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Arduino
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Calculus
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                        </tr>
+                        <tr className="bg-white border-0 transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 break-words">
+                            web <br /> programming
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Spanish
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Arduino
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            Calculus
+                          </td>
+                          <td className="text-sm border-r text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
+                            UI/UX
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                   <Calendar />
                 </div>

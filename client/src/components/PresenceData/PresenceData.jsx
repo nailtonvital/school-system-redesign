@@ -4,7 +4,7 @@ import GradesTable from "../GradesTable/GradesTable";
 export default function PresenceData() {
   const lines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 121];
   return (
-    <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6">
+    <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-y-8 md:gap-5 lg:gap-5">
       <div className="flex-col col-span-2">
         <div className="card w-full p-3">
           <h3 className="font-bold">Presença</h3>
@@ -55,8 +55,8 @@ export default function PresenceData() {
           </div>
         </div>
       </div>
-      <div className="w-auto col-span-4 p-5 ">
-        <table className="table-auto text-left card ">
+      <div className="w-auto col-span-4 ">
+        <table className="table-auto text-left card">
           <tr>
             <th className="text-sm font-medium pl-3 text-gray-900 ">
               Curriculum Component

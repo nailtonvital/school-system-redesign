@@ -31,8 +31,8 @@ export default function Schedule() {
       <Paper className="col-span-3 relative">
         <Scheduler data={schedulerData}>
           <ViewState currentDate={currentDate} />
-          <DayView startDayHour={9} endDayHour={14} />
-          <Appointments />
+          <DayView startDayHour={7} endDayHour={12} />
+          <Appointments /> 
         </Scheduler>
       </Paper>
     );}

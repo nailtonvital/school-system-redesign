@@ -1,5 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 import student from "../../assets/Keenan.jpg";
 import teacher from "../../assets/teacher.png";
 import coordinator from "../../assets/coordinator.png";
@@ -8,8 +12,12 @@ import logo from "../../assets/logo.png";
 import { AuthContext } from "../../Context/AuthContext";
 
 function Sidebar(props) {
-  const [report, setReport] = React.useState(false);
-  const [notificationModal, setNotificationModal] = React.useState(false);
+  const [openNotification, setOpenNotification] = React.useState(false);
+  const [openReport, setOpenReport] = React.useState(false);
+  const handleOpenNotification = () => setOpenNotification(true);
+  const handleCloseNotification = () => setOpenNotification(false);
+  const handleOpenReport = () => setOpenReport(true);
+  const handleCloseReport = () => setOpenReport(false);
 
   const { name, setAuth, role } = useContext(AuthContext);
 
@@ -17,10 +25,12 @@ function Sidebar(props) {
     setAuth(false);
   };
 
+  
+
   return (
     <nav className="bg-white w-20 px-2 shadow-md h-screen fixed text-center justify-between flex flex-col ">
-      <div className="mt-10 mb-10">
-        <Link to="me">
+      <div className="mt-8 ">
+        <Link to="about-me">
           <img
             src={
               role
@@ -33,14 +43,14 @@ function Sidebar(props) {
                   : null
                 : null
             }
-            className="rounded-full w-10 h-10 mb-3 mx-auto"
+            className="rounded-full w-10 h-10 mb-1 mx-auto"
           />
         </Link>
-        <div className="mt-10">
+        <div className="mt-6">
           <ul>
             {/* Dashboard */}
-            <li className="mb-3 group ">
-              <Link to="">
+            <li className="mb-2 group ">
+              <Link to="" className="-mt-2 -pt-2">
                 <span
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
@@ -56,7 +66,7 @@ function Sidebar(props) {
                     <path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm5 2h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm1-6h4v4h-4V5zM3 20a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6zm2-5h4v4H5v-4zm8 5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6zm2-5h4v4h-4v-4z"></path>
                   </svg>
                 </span>
-                <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 ">
                   Dashboard
                 </span>
               </Link>
@@ -65,7 +75,7 @@ function Sidebar(props) {
             {/* Faltas/ Chamada */}
             {role ? (
               role === "student" ? (
-                <li className="mb-3 group">
+                <li className="mb-2 group">
                   <Link to="absences">
                     <span
                       data-bs-toggle="tooltip"
@@ -82,13 +92,13 @@ function Sidebar(props) {
                         <path d="M20.29 8.29 16 12.58l-1.3-1.29-1.41 1.42 2.7 2.7 5.72-5.7zM4 8a3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4 3.91 3.91 0 0 0-4 4zm6 0a1.91 1.91 0 0 1-2 2 1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2zM4 18a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v1h2v-1a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5v1h2z"></path>
                       </svg>
                     </span>
-                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                       Absences
                     </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
-                <li className="mb-3 group">
+                <li className="mb-2 group">
                   <Link to="attendance">
                     <span
                       data-bs-toggle="tooltip"
@@ -106,7 +116,7 @@ function Sidebar(props) {
                         <path d="M15.535 5.464 14.121 6.88C14.688 7.445 15 8.198 15 9s-.312 1.555-.879 2.12l1.414 1.416C16.479 11.592 17 10.337 17 9s-.521-2.592-1.465-3.536z"></path>
                       </svg>
                     </span>
-                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                       Attendance
                     </span>
                   </Link>
@@ -115,7 +125,7 @@ function Sidebar(props) {
             ) : null}
 
             {/* Relogio */}
-            <li className="mb-3 group">
+            <li className="mb-2 group">
               <Link to="schedule">
                 <span
                   data-bs-toggle="tooltip"
@@ -133,7 +143,7 @@ function Sidebar(props) {
                     <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
                   </svg>
                 </span>
-                <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                   Schedule
                 </span>
               </Link>
@@ -141,7 +151,7 @@ function Sidebar(props) {
             {/* Lectures/Classes */}
             {role ? (
               role === "student" ? (
-                <li className="mb-3 group">
+                <li className="mb-2 group">
                   <Link to="lectures">
                     <span
                       data-bs-toggle="tooltip"
@@ -158,13 +168,13 @@ function Sidebar(props) {
                         <path d="M4 21h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zm0-2V7h16l.001 12H4z"></path>
                       </svg>
                     </span>
-                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                       Lectures
                     </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
-                <li className="mb-3 group">
+                <li className="mb-2 group">
                   <Link to="classes">
                     <span
                       data-bs-toggle="tooltip"
@@ -182,7 +192,7 @@ function Sidebar(props) {
                         <path d="M7 7h1.998v2H7zm4 0h6v2h-6zm-4 4h1.998v2H7zm4 0h6v2h-6zm-4 4h1.998v2H7zm4 0h6v2h-6z"></path>
                       </svg>
                     </span>
-                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                       Classes
                     </span>
                   </Link>
@@ -193,7 +203,7 @@ function Sidebar(props) {
             {/* Professores/Alunos */}
             {role ? (
               role === "student" ? (
-                <li className="mb-3 group">
+                <li className="mb-2 group">
                   <Link to="teachers">
                     <span
                       data-bs-toggle="tooltip"
@@ -211,13 +221,13 @@ function Sidebar(props) {
                         <path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path>
                       </svg>
                     </span>
-                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                       Teachers
                     </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
-                <li className="mb-3 group">
+                <li className="mb-2 group">
                   <Link to="students">
                     <span
                       data-bs-toggle="tooltip"
@@ -235,14 +245,14 @@ function Sidebar(props) {
                         <path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path>
                       </svg>
                     </span>
-                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                    <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                       Students
                     </span>
                   </Link>
                 </li>
               ) : role === "coordinator" ? (
                 <>
-                  <li className="mb-3 group">
+                  <li className="mb-2 group">
                     <Link to="teachers">
                       <span
                         data-bs-toggle="tooltip"
@@ -262,12 +272,12 @@ function Sidebar(props) {
                           <path d="M20.21 7.73a1 1 0 0 0-1-.73h-4.5a1 1 0 0 0-1 .73L12 14h2l-1 4h2v4h4v-4h2l-1-4h2z"></path>
                         </svg>
                       </span>
-                      <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                      <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                         Teachers
                       </span>
                     </Link>
                   </li>
-                  <li className="mb-3 group">
+                  <li className="mb-2 group">
                     <Link to="students">
                       <span
                         data-bs-toggle="tooltip"
@@ -285,7 +295,7 @@ function Sidebar(props) {
                           <path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path>
                         </svg>
                       </span>
-                      <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+                      <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                         Students
                       </span>
                     </Link>
@@ -295,37 +305,14 @@ function Sidebar(props) {
             ) : null}
 
             {/* informações pessoais */}
-            <li className="mb-3 group">
-              <Link to="about-me">
-                <span
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  title="About Me"
-                >
-                  <svg
-                    className="fill-current h-5 w-5 text-gray-400 mx-auto group-hover:text-red-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2A10.13 10.13 0 0 0 2 12a10 10 0 0 0 4 7.92V20h.1a9.7 9.7 0 0 0 11.8 0h.1v-.08A10 10 0 0 0 22 12 10.13 10.13 0 0 0 12 2zM8.07 18.93A3 3 0 0 1 11 16.57h2a3 3 0 0 1 2.93 2.36 7.75 7.75 0 0 1-7.86 0zm9.54-1.29A5 5 0 0 0 13 14.57h-2a5 5 0 0 0-4.61 3.07A8 8 0 0 1 4 12a8.1 8.1 0 0 1 8-8 8.1 8.1 0 0 1 8 8 8 8 0 0 1-2.39 5.64z"></path>
-                    <path d="M12 6a3.91 3.91 0 0 0-4 4 3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4zm0 6a1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2 1.91 1.91 0 0 1-2 2z"></path>
-                  </svg>
-                </span>
-                <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
-                  About Me
-                </span>
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
-      <div className="mb-4">
-        <div className="mb-4">
+      <div className="mb-2">
+        <div className="mb-2">
           {/* Alerta */}
-          <div className="mb-4 group">
-            <a onClick={() => setReport(true)}>
+          <div className="mb-2 group">
+            <a onClick={handleOpenReport}>
               <span
                 data-bs-toggle="tooltip"
                 data-bs-placement="right"
@@ -342,12 +329,18 @@ function Sidebar(props) {
                   <path d="M11 7h2v7h-2zm0 8h2v2h-2z"></path>
                 </svg>
               </span>
-              <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+              <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
                 Report
               </span>
             </a>
           </div>
-          {report ? (
+          <Modal
+            open={openReport}
+            onClose={handleCloseReport}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box>
             <>
               <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 text-left outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
@@ -368,11 +361,11 @@ function Sidebar(props) {
                     {/*body*/}
                     <div className="relative p-6  flex-auto">
                       <div className=" justify-center">
-                        <div className="mb-3 xl:w-96">
+                        <div className="mb-2 xl:w-96">
                           <label className="form-label inline-block mb-0 text-gray-700">
                             Subject
                           </label>
-                          <div className="mb-3 xl:w-96">
+                          <div className="mb-2 xl:w-96">
                             <select
                               className="form-select 
                             block
@@ -430,7 +423,7 @@ function Sidebar(props) {
                           </div>
                         </div>
                         <div className="flex justify-center mt-3">
-                          <div className="mb-3 xl:w-96">
+                          <div className="mb-2 xl:w-96">
                             <label
                               for="exampleFormControlTextarea1"
                               className="form-label inline-block mb-0 text-gray-700"
@@ -468,14 +461,14 @@ function Sidebar(props) {
                       <button
                         className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
-                        onClick={() => setReport(false)}
+                        onClick={handleCloseReport}
                       >
                         Cancel
                       </button>
                       <button
                         className="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
-                        onClick={() => setReport(false)}
+                        onClick={handleCloseReport}
                       >
                         Send report
                       </button>
@@ -485,14 +478,10 @@ function Sidebar(props) {
               </div>
               <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
             </>
-          ) : null}
+            </Box>
+          </Modal>
           {/* Notificações */}
-          <Link
-            onClick={() => {
-              setNotificationModal(true);
-            }}
-            className="mb-4 group"
-          >
+          <Link onClick={handleOpenNotification} className="mb-2 group">
             <span
               data-bs-toggle="tooltip"
               data-bs-placement="right"
@@ -512,115 +501,125 @@ function Sidebar(props) {
                 />
               </svg>
             </span>
-            <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+            <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
               Messages
             </span>
           </Link>
-          {notificationModal ? (
-            <>
-              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                  {/*content*/}
-                  <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                    {/*header*/}
-                    <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                      <h3 className="text-3xl font-semibold">Notifications</h3>
-                      <button onClick={() => setNotificationModal(false)}>
-                        <span className=" text-red-500 opacity-10 -pt-3 mr-4 hover:opacity-100 h-7 w-7 text-2xl block outline-none focus:outline-none">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="40"
-                            height="40"
-                            viewBox="0 0 24 24"
-                            className="fill-current"
-                          >
-                            <path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path>
-                            <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path>
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                    {/*body*/}
-                    <div className="overflow-auto h-96">
-                      <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
-                        <div className="flex">
-                          <div className="">
-                            <h5 className="font-bold">Name</h5>
-                            <p className="text-slate-600 w-9/12 truncate">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.{" "}
-                            </p>
-                          </div>
-                          <div className="">
-                            <p className="text-slate-600 w-9/12 flex-col text-right">
-                              <span>14:14</span>
-                              <br />
-                              <span>14/10/2022</span>
-                            </p>
+          <Modal
+            open={openNotification}
+            onClose={handleCloseNotification}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box >
+              <>
+                <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                  <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                    {/*content*/}
+                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                      {/*header*/}
+                      <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                        <h3 className="text-3xl font-semibold">
+                          Notifications
+                        </h3>
+                        <button onClick={handleCloseNotification}>
+                          <span className=" text-red-500 opacity-10 -pt-3 mr-4 hover:opacity-100 h-7 w-7 text-2xl block outline-none focus:outline-none">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="40"
+                              height="40"
+                              viewBox="0 0 24 24"
+                              className="fill-current"
+                            >
+                              <path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path>
+                              <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                      {/*body*/}
+                      <div className="overflow-auto h-96">
+                        <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
+                          <div className="flex">
+                            <div className="">
+                              <h5 className="font-bold">Name</h5>
+                              <p className="text-slate-600 w-9/12 truncate">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.{" "}
+                              </p>
+                            </div>
+                            <div className="">
+                              <p className="text-slate-600 w-9/12 flex-col text-right">
+                                <span>14:14</span>
+                                <br />
+                                <span>14/10/2022</span>
+                              </p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
-                        <div className="flex">
-                          <div className="">
-                            <h5 className="font-bold">Name</h5>
-                            <p className="text-slate-600 w-9/12 truncate">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.{" "}
-                            </p>
-                          </div>
-                          <div className="">
-                            <p className="text-slate-600 w-9/12 flex-col text-right">
-                              <span>14:14</span>
-                              <br />
-                              <span>14/10/2022</span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
-                        <div className="flex">
-                          <div className="">
-                            <h5 className="font-bold">Name</h5>
-                            <p className="text-slate-600 w-9/12 truncate">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.{" "}
-                            </p>
-                          </div>
-                          <div className="">
-                            <p className="text-slate-600 w-9/12 flex-col text-right">
-                              <span>14:14</span>
-                              <br />
-                              <span>14/10/2022</span>
-                            </p>
+                        <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
+                          <div className="flex">
+                            <div className="">
+                              <h5 className="font-bold">Name</h5>
+                              <p className="text-slate-600 w-9/12 truncate">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.{" "}
+                              </p>
+                            </div>
+                            <div className="">
+                              <p className="text-slate-600 w-9/12 flex-col text-right">
+                                <span>14:14</span>
+                                <br />
+                                <span>14/10/2022</span>
+                              </p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
-                        <div className="flex">
-                          <div className="">
-                            <h5 className="font-bold">Name</h5>
-                            <p className="text-slate-600 w-9/12 truncate">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.{" "}
-                            </p>
+                        <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
+                          <div className="flex">
+                            <div className="">
+                              <h5 className="font-bold">Name</h5>
+                              <p className="text-slate-600 w-9/12 truncate">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.{" "}
+                              </p>
+                            </div>
+                            <div className="">
+                              <p className="text-slate-600 w-9/12 flex-col text-right">
+                                <span>14:14</span>
+                                <br />
+                                <span>14/10/2022</span>
+                              </p>
+                            </div>
                           </div>
-                          <div className="">
-                            <p className="text-slate-600 w-9/12 flex-col text-right">
-                              <span>14:14</span>
-                              <br />
-                              <span>14/10/2022</span>
-                            </p>
+                        </div>
+                        <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
+                          <div className="flex">
+                            <div className="">
+                              <h5 className="font-bold">Name</h5>
+                              <p className="text-slate-600 w-9/12 truncate">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.{" "}
+                              </p>
+                            </div>
+                            <div className="">
+                              <p className="text-slate-600 w-9/12 flex-col text-right">
+                                <span>14:14</span>
+                                <br />
+                                <span>14/10/2022</span>
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-            </>
-          ) : null}
+                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+              </>
+            </Box>
+          </Modal>
+          
         </div>
         {/* Sair */}
         <div className="group">
@@ -642,12 +641,15 @@ function Sidebar(props) {
                 <path d="m11 16 5-4-5-4v3.001H3v2h8z"></path>
               </svg>
             </span>
-            <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500">
+            <span
+              onClick={handleLogout}
+              className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2"
+            >
               Exit
             </span>
           </Link>
         </div>
-        <img src={logo} className="pl-4 mt-5 w-9/12" alt="" />
+        <img src={logo} className="pl-4 mt-2 w-9/12" alt="" />
       </div>
     </nav>
   );

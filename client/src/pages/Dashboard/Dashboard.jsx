@@ -24,7 +24,7 @@ export default function Dashboard() {
   const { role } = useContext(AuthContext);
   return (
     <div className="flex flex-row ">
-      <Sidebar type="teacher" />
+      <Sidebar/>
       <div className="flex-1 bg-white pl-7 pr-4 ml-20">
         <Navbar />
         <div>

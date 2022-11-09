@@ -9,6 +9,7 @@ import './style.css'
 import TodayClasses from '../../components/TodayClasses/TodayClasses';
 import EmailCard from '../../components/EmailCard/EmailCard';
 import Schedule from "../../components/Schedule";
+import TodayMenu from '../../components/TodayMenu';
 
 
 export default function StudentDashboard() {
@@ -25,7 +26,7 @@ export default function StudentDashboard() {
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
         <Schedule />
-        <EmailCard benefits={true}/>
+        <TodayMenu />
       </div>
     </div>      
   )
