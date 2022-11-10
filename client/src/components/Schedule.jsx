@@ -10,19 +10,35 @@ import {
 const currentDate = "2022-11-07";
 const schedulerData = [
   {
+    startDate: "2022-11-07T07:00",
+    endDate: "2022-11-07T07:45",
+    title: "Biologia",
+  },
+  {
+    startDate: "2022-11-07T07:45",
+    endDate: "2022-11-07T08:35",
+    title: "Filosofia",
+  },
+
+  {
+    startDate: "2022-11-07T08:35",
+    endDate: "2022-11-07T09:30",
+    title: "TCC",
+  },
+  {
     startDate: "2022-11-07T09:45",
     endDate: "2022-11-07T10:35",
-    title: "Web Programming",
+    title: "Programação Web & Mobile",
   },
   {
     startDate: "2022-11-07T10:35",
     endDate: "2022-11-07T11:25",
-    title: "Math",
+    title: "Matemática",
   },
   {
     startDate: "2022-11-07T11:25",
     endDate: "2022-11-07T12:15",
-    title: "English",
+    title: "Inglês",
   },
 ];
 

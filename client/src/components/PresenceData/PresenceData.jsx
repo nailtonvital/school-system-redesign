@@ -4,13 +4,13 @@ import GradesTable from "../GradesTable/GradesTable";
 export default function PresenceData() {
   const lines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 121];
   return (
-    <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-y-8 md:gap-5 lg:gap-5">
-      <div className="flex-col col-span-2">
-        <div className="card w-full p-3">
+    <div className="flex-col">
+      <div className="grid grid-cols-4 gap-2 mb-7">
+        <div className="card w-full p-3 col-span-2">
           <h3 className="font-bold">Presença</h3>
           <div className="my-3">
             <div className="flex justify-between">
-              <h2 className="text-red-600 font-bold text-xl">Bad</h2>
+              <h2 className="text-red-600 font-bold text-xl">Ruim</h2>
               <p className="text-slate-500">30%</p>
             </div>
             <div className="w-full bg-gray-200 h-1">
@@ -18,7 +18,7 @@ export default function PresenceData() {
             </div>
           </div>
 
-          <div className="flex gap-5 mt-7">
+          <div className="flex gap-5 mt-7 ">
             <div className="flex-col ">
               <h2 className="text-2xl -mt-2">87</h2>
               <h4 className="text-sm whitespace-nowrap text-red-600">Faltas</h4>
@@ -35,11 +35,11 @@ export default function PresenceData() {
             </div>
           </div>
         </div>
-        <div className="card w-full p-3">
+        <div className="card w-full p-3 col-span-2">
           <h3 className="font-bold">Presença</h3>
           <div className="my-3">
             <div className="flex justify-between">
-              <h2 className="text-red-600 font-bold text-xl">You</h2>
+              <h2 className="text-red-600 font-bold text-xl">Você</h2>
               <p className="text-slate-500">30%</p>
             </div>
             <div className="w-full bg-gray-200 h-1 mb-2">
@@ -49,7 +49,7 @@ export default function PresenceData() {
               <div className="bg-green-600 h-1 w-5/12"></div>
             </div>
             <div className="flex justify-between mt-1">
-              <h2 className="text-green-600 font-bold text-xl">Average</h2>
+              <h2 className="text-green-600 font-bold text-xl">Média escolar</h2>
               <p className="text-slate-500">45%</p>
             </div>
           </div>
@@ -58,13 +58,13 @@ export default function PresenceData() {
       <div className="w-auto col-span-4 ">
         <table className="table-auto text-left card">
           <tr>
-            <th className="text-sm font-medium pl-3 text-gray-900 ">
-              Curriculum Component
+            <th className="text-sm font-medium pl-3 text-gray-900 capitalize">
+              Componente curricular
             </th>
-            <th className="text-sm font-medium text-gray-900 ">Classes</th>
-            <th className="text-sm font-medium text-gray-900 ">Absences</th>
-            <th className="text-sm font-medium text-gray-900 ">Freq</th>
-            <th className="text-sm font-medium text-gray-900 ">Situation</th>
+            <th className="text-sm font-medium text-gray-900 ">Aulas</th>
+            <th className="text-sm font-medium text-gray-900 ">Faltas</th>
+            <th className="text-sm font-medium text-gray-900 ">Frequencia</th>
+            <th className="text-sm font-medium text-gray-900 ">Situação</th>
           </tr>
           {lines.map((i, index) => {
             return (

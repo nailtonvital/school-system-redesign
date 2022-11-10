@@ -23,7 +23,7 @@ export default function StudentsTable() {
     : (bgColor = "bg-" + color + "-500");
 
   return (
-    <div className="card p-5 mb-7 overflow-x-scrool">
+    <div className="card p-5 mb-7 overflow-hidden">
       <div className="flex justify-left">
         <div className="w-full">
           <div className="input-group flex gap-1 items-stretch w-full mb-4">
@@ -170,7 +170,7 @@ export default function StudentsTable() {
                       99999
                     </td>
                     <td className="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
-                      <Link to="/dashboard/student">Isaac Geraldo Almada</Link>
+                      <Link to="/dashboard/aluno">Isaac Geraldo Almada</Link>
                     </td>
                     <td className="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
                       2ºELETRO

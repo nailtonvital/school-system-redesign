@@ -17,17 +17,23 @@ export default function StudentDashboard() {
   const [value, onChange] = useState(new Date());
    
   return (
-    <div className=''>
-      <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 h-full mb-5'>
-        <BimestralCard/>
+    <div className="-mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 h-full mb-5">
+        <BimestralCard />
         <GradeCard />
         <PresenceCard />
-        <Calendar onChange={onChange} value={value} className='card flex-1'/>
+        <div className="card p-5">
+          <h4 className="mb-7 font-bold">Calendário Escolar</h4>
+          <Calendar onChange={onChange} value={value} className="border-0 flex-1" />
+        </div>
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         <Schedule />
-        <TodayMenu />
+        <div className="">
+          <TodayMenu />
+          <EmailCard benefits={true} />
+        </div>
       </div>
-    </div>      
-  )
+    </div>
+  );
 }

@@ -28,7 +28,7 @@ export default function SchedulePage() {
                 href="#link1"
                 role="tablist"
               >
-                Today
+                Hoje
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -47,7 +47,7 @@ export default function SchedulePage() {
                 href="#link1"
                 role="tablist"
               >
-                All Classes
+                Semana
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -66,7 +66,7 @@ export default function SchedulePage() {
                 href="#link2"
                 role="tablist"
               >
-                school calendar
+                Calendário escolar
               </a>
             </li>
           </ul>
@@ -82,11 +82,11 @@ export default function SchedulePage() {
                     <table className="table-auto  mt-5 border ">
                       <thead>
                         <tr>
-                          <th className="p-3 border-r">Monday</th>
-                          <th className="p-3 border-r">Tuesday</th>
-                          <th className="p-3 border-r">Wednesday</th>
-                          <th className="p-3 border-r">Thursday</th>
-                          <th className="p-3 border-r">Friday</th>
+                          <th className="p-3 border-r">Segunda</th>
+                          <th className="p-3 border-r">Terça</th>
+                          <th className="p-3 border-r">Quarta</th>
+                          <th className="p-3 border-r">Quinta</th>
+                          <th className="p-3 border-r">Sexta</th>
                         </tr>
                       </thead>
                       <tbody className="font-normal capitalize">

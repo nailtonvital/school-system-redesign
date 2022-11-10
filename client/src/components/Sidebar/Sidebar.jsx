@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import student from "../../assets/Keenan.jpg";
 import teacher from "../../assets/teacher.png";
@@ -30,7 +28,7 @@ function Sidebar(props) {
   return (
     <nav className="bg-white w-20 px-2 shadow-md h-screen fixed text-center justify-between flex flex-col ">
       <div className="mt-8 ">
-        <Link to="about-me">
+        <Link to="sobre-mim">
           <img
             src={
               role
@@ -76,7 +74,7 @@ function Sidebar(props) {
             {role ? (
               role === "student" ? (
                 <li className="mb-2 group">
-                  <Link to="absences">
+                  <Link to="faltas">
                     <span
                       data-bs-toggle="tooltip"
                       data-bs-placement="right"
@@ -93,13 +91,13 @@ function Sidebar(props) {
                       </svg>
                     </span>
                     <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                      Absences
+                      Faltas
                     </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
                 <li className="mb-2 group">
-                  <Link to="attendance">
+                  <Link to="chamada">
                     <span
                       data-bs-toggle="tooltip"
                       data-bs-placement="right"
@@ -117,7 +115,7 @@ function Sidebar(props) {
                       </svg>
                     </span>
                     <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                      Attendance
+                      Chamada
                     </span>
                   </Link>
                 </li>
@@ -126,7 +124,7 @@ function Sidebar(props) {
 
             {/* Relogio */}
             <li className="mb-2 group">
-              <Link to="schedule">
+              <Link to="horario">
                 <span
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
@@ -144,7 +142,7 @@ function Sidebar(props) {
                   </svg>
                 </span>
                 <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                  Schedule
+                  Horário
                 </span>
               </Link>
             </li>
@@ -152,7 +150,7 @@ function Sidebar(props) {
             {role ? (
               role === "student" ? (
                 <li className="mb-2 group">
-                  <Link to="lectures">
+                  <Link to="materias">
                     <span
                       data-bs-toggle="tooltip"
                       data-bs-placement="right"
@@ -169,13 +167,13 @@ function Sidebar(props) {
                       </svg>
                     </span>
                     <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                      Lectures
+                      Matérias
                     </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
                 <li className="mb-2 group">
-                  <Link to="classes">
+                  <Link to="turmas">
                     <span
                       data-bs-toggle="tooltip"
                       data-bs-placement="right"
@@ -204,7 +202,7 @@ function Sidebar(props) {
             {role ? (
               role === "student" ? (
                 <li className="mb-2 group">
-                  <Link to="teachers">
+                  <Link to="professores">
                     <span
                       data-bs-toggle="tooltip"
                       data-bs-placement="right"
@@ -222,13 +220,13 @@ function Sidebar(props) {
                       </svg>
                     </span>
                     <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                      Teachers
+                      Professores
                     </span>
                   </Link>
                 </li>
               ) : role === "teacher" ? (
                 <li className="mb-2 group">
-                  <Link to="students">
+                  <Link to="alunos">
                     <span
                       data-bs-toggle="tooltip"
                       data-bs-placement="right"
@@ -246,14 +244,14 @@ function Sidebar(props) {
                       </svg>
                     </span>
                     <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                      Students
+                      Alunos
                     </span>
                   </Link>
                 </li>
               ) : role === "coordinator" ? (
                 <>
                   <li className="mb-2 group">
-                    <Link to="teachers">
+                    <Link to="professores">
                       <span
                         data-bs-toggle="tooltip"
                         data-bs-placement="right"
@@ -273,16 +271,16 @@ function Sidebar(props) {
                         </svg>
                       </span>
                       <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                        Teachers
+                        Professores
                       </span>
                     </Link>
                   </li>
                   <li className="mb-2 group">
-                    <Link to="students">
+                    <Link to="alunos">
                       <span
                         data-bs-toggle="tooltip"
                         data-bs-placement="right"
-                        title="Students"
+                        title="Alunos"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -296,7 +294,7 @@ function Sidebar(props) {
                         </svg>
                       </span>
                       <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                        Students
+                        Alunos
                       </span>
                     </Link>
                   </li>
@@ -330,7 +328,7 @@ function Sidebar(props) {
                 </svg>
               </span>
               <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-                Report
+                Reportar
               </span>
             </a>
           </div>
@@ -341,33 +339,33 @@ function Sidebar(props) {
             aria-describedby="modal-modal-description"
           >
             <Box>
-            <>
-              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 text-left outline-none focus:outline-none">
-                <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                  {/*content*/}
-                  <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                    {/*header*/}
-                    <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                      <h3 className="text-3xl font-semibold">Report</h3>
-                      <button
-                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                        onClick={() => setReport(false)}
-                      >
-                        <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                          ×
-                        </span>
-                      </button>
-                    </div>
-                    {/*body*/}
-                    <div className="relative p-6  flex-auto">
-                      <div className=" justify-center">
-                        <div className="mb-2 xl:w-96">
-                          <label className="form-label inline-block mb-0 text-gray-700">
-                            Subject
-                          </label>
+              <>
+                <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 text-left outline-none focus:outline-none">
+                  <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                    {/*content*/}
+                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                      {/*header*/}
+                      <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                        <h3 className="text-3xl font-semibold">Reportar</h3>
+                        <button
+                          className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                          onClick={() => setReport(false)}
+                        >
+                          <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                            ×
+                          </span>
+                        </button>
+                      </div>
+                      {/*body*/}
+                      <div className="relative p-6  flex-auto">
+                        <div className=" justify-center">
                           <div className="mb-2 xl:w-96">
-                            <select
-                              className="form-select 
+                            <label className="form-label inline-block mb-0 text-gray-700">
+                              Assunto
+                            </label>
+                            <div className="mb-2 xl:w-96">
+                              <select
+                                className="form-select 
                             block
                             w-full
                             px-3
@@ -382,56 +380,56 @@ function Sidebar(props) {
                             ease-in-out
                             m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                              aria-label="Default select example"
-                            >
-                              <option className="font-normal" selected>
-                                Select the subject
-                              </option>
-                              <option className="font-normal" value="1">
-                                Bug
-                              </option>
-                              <option className="font-normal" value="2">
-                                Teacher
-                              </option>
-                              <option className="font-normal" value="3">
-                                Other
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div className="flex justify-left">
-                          <div>
-                            <div className="form-check flex">
-                              <input
-                                className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault20"
-                                checked
-                              />
-                              Anonymous
-                            </div>
-                            <div className="form-check flex">
-                              <input
-                                className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                type="radio"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault10"
-                              />
-                              Not anonymous
+                                aria-label="Default select example"
+                              >
+                                <option className="font-normal" selected>
+                                  Selecione o Assunto
+                                </option>
+                                <option className="font-normal" value="1">
+                                  Bug
+                                </option>
+                                <option className="font-normal" value="2">
+                                  Professor
+                                </option>
+                                <option className="font-normal" value="3">
+                                  Outro
+                                </option>
+                              </select>
                             </div>
                           </div>
-                        </div>
-                        <div className="flex justify-center mt-3">
-                          <div className="mb-2 xl:w-96">
-                            <label
-                              for="exampleFormControlTextarea1"
-                              className="form-label inline-block mb-0 text-gray-700"
-                            >
-                              Type your message
-                            </label>
-                            <textarea
-                              className="
+                          <div className="flex justify-left">
+                            <div>
+                              <div className="form-check flex">
+                                <input
+                                  className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                  type="radio"
+                                  name="flexRadioDefault"
+                                  id="flexRadioDefault20"
+                                  checked
+                                />
+                                Anônimo
+                              </div>
+                              <div className="form-check flex">
+                                <input
+                                  className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                  type="radio"
+                                  name="flexRadioDefault"
+                                  id="flexRadioDefault10"
+                                />
+                                Não Anônimo
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex justify-center mt-3">
+                            <div className="mb-2 xl:w-96">
+                              <label
+                                for="exampleFormControlTextarea1"
+                                className="form-label inline-block mb-0 text-gray-700"
+                              >
+                                Mensagem
+                              </label>
+                              <textarea
+                                className="
                                     form-control
                                     block
                                     w-full
@@ -448,36 +446,36 @@ function Sidebar(props) {
                                     m-0
                                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                                   "
-                              id="exampleFormControlTextarea1"
-                              rows="3"
-                              placeholder="Your message"
-                            ></textarea>
+                                id="exampleFormControlTextarea1"
+                                rows="3"
+                                placeholder="Escreva sua mensagem"
+                              ></textarea>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    {/*footer*/}
-                    <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                      <button
-                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button"
-                        onClick={handleCloseReport}
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button"
-                        onClick={handleCloseReport}
-                      >
-                        Send report
-                      </button>
+                      {/*footer*/}
+                      <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                        <button
+                          className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          type="button"
+                          onClick={handleCloseReport}
+                        >
+                          Cancelar
+                        </button>
+                        <button
+                          className="bg-red-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          type="button"
+                          onClick={handleCloseReport}
+                        >
+                          Enviar
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-            </>
+                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+              </>
             </Box>
           </Modal>
           {/* Notificações */}
@@ -502,7 +500,7 @@ function Sidebar(props) {
               </svg>
             </span>
             <span className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2">
-              Messages
+              Notificações
             </span>
           </Link>
           <Modal
@@ -511,7 +509,7 @@ function Sidebar(props) {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box >
+            <Box>
               <>
                 <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                   <div className="relative w-auto my-6 mx-auto max-w-3xl">
@@ -519,9 +517,7 @@ function Sidebar(props) {
                     <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                       {/*header*/}
                       <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                        <h3 className="text-3xl font-semibold">
-                          Notifications
-                        </h3>
+                        <h3 className="text-3xl font-semibold">Notificações</h3>
                         <button onClick={handleCloseNotification}>
                           <span className=" text-red-500 opacity-10 -pt-3 mr-4 hover:opacity-100 h-7 w-7 text-2xl block outline-none focus:outline-none">
                             <svg
@@ -542,7 +538,7 @@ function Sidebar(props) {
                         <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
                           <div className="flex">
                             <div className="">
-                              <h5 className="font-bold">Name</h5>
+                              <h5 className="font-bold">Título</h5>
                               <p className="text-slate-600 w-9/12 truncate">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit.{" "}
@@ -560,7 +556,7 @@ function Sidebar(props) {
                         <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
                           <div className="flex">
                             <div className="">
-                              <h5 className="font-bold">Name</h5>
+                              <h5 className="font-bold">Título</h5>
                               <p className="text-slate-600 w-9/12 truncate">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit.{" "}
@@ -578,7 +574,7 @@ function Sidebar(props) {
                         <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
                           <div className="flex">
                             <div className="">
-                              <h5 className="font-bold">Name</h5>
+                              <h5 className="font-bold">Título</h5>
                               <p className="text-slate-600 w-9/12 truncate">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit.{" "}
@@ -596,7 +592,7 @@ function Sidebar(props) {
                         <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
                           <div className="flex">
                             <div className="">
-                              <h5 className="font-bold">Name</h5>
+                              <h5 className="font-bold">Título</h5>
                               <p className="text-slate-600 w-9/12 truncate">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit.{" "}
@@ -619,7 +615,6 @@ function Sidebar(props) {
               </>
             </Box>
           </Modal>
-          
         </div>
         {/* Sair */}
         <div className="group">
@@ -645,7 +640,7 @@ function Sidebar(props) {
               onClick={handleLogout}
               className="text-xs text-gray-400 mx-auto text-center  group-hover:text-red-500 -mt-2"
             >
-              Exit
+              Sair
             </span>
           </Link>
         </div>

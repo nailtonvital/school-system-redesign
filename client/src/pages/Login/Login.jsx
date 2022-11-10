@@ -17,14 +17,14 @@ function LoginPage() {
         {/* Title */}
           <img src={logoNsa} className="mx-auto h-28 p-7" alt="logo nsa" />
 
-        <h3 className='text-center mt-8 font-bold'>Entry as</h3>
+        <h3 className='text-center mt-8 font-bold'>Entrar como</h3>
         <Link to="dashboard" >
         <div onClick={()=>{
           setRole("student")
           setAuth(true)
         }} className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
           <img src={student} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
-          <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Student</h3>
+          <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Aluno</h3>
         </div>
         </Link>
         <Link to="dashboard" >
@@ -34,7 +34,7 @@ function LoginPage() {
           setAuth(true)
         }} className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
             <img src={teacher} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
-            <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Teacher</h3>
+            <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Professor</h3>
           </div>
         </Link>
         <Link to="dashboard" >
@@ -44,7 +44,7 @@ function LoginPage() {
           setAuth(true)
         }} className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-3/12 card p-8 md:p-8 lg:p-3 flex flex-wrap content-center mx-auto  mb-5">
           <img src={coordinator} className="mx-0 sm:mx-10 lg:mx-0" alt="" />
-          <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Coordinator</h3>
+          <h3 className='font-bold ml-3 mt-4 align-middle text-left sm:text-center'>Coordenador</h3>
         </div>
         </Link>
       </div>

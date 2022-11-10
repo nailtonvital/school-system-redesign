@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Attendance() {
     const [openTab, setOpenTab] = useState(1);
@@ -27,7 +28,7 @@ export default function Attendance() {
                 href="#link1"
                 role="tablist"
               >
-                Attendance not commited
+                Chamadas não feitas
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -46,7 +47,7 @@ export default function Attendance() {
                 href="#link2"
                 role="tablist"
               >
-                Attendance commited
+                Chamadas feitas
               </a>
             </li>
           </ul>
@@ -61,19 +62,19 @@ export default function Attendance() {
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                          Classes
+                          Classe
                         </th>
                         <th
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                          Schedule
+                          Periodo
                         </th>
                         <th
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-center"
                         >
-                          Actions
+                          Ações
                         </th>
                       </tr>
                     </thead>
@@ -87,7 +88,7 @@ export default function Attendance() {
                         </td>
                         <td className="text-sm text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
                           <button className="bg-blue-600 hover:bg-blue-500 text-white rounded px-4 py-2">
-                            Make Attendance
+                            <Link to="/dashboard/realizar-chamada"> Realizar chamada</Link>
                           </button>
                         </td>
                       </tr>
@@ -100,7 +101,7 @@ export default function Attendance() {
                         </td>
                         <td className="text-sm text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
                           <button className="bg-blue-600 text-white rounded px-4 py-2">
-                            Realizar chamada
+                            <Link to="/dashboard/realizar-chamada"> Realizar chamada</Link>
                           </button>
                         </td>
                       </tr>
@@ -113,7 +114,7 @@ export default function Attendance() {
                         </td>
                         <td className="text-sm text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
                           <button className="bg-blue-600 text-white rounded px-4 py-2">
-                            Realizar chamada
+                            <Link to="/dashboard/realizar-chamada"> Realizar chamada</Link>
                           </button>
                         </td>
                       </tr>
@@ -128,19 +129,19 @@ export default function Attendance() {
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                          Classes
+                          Classe
                         </th>
                         <th
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                          Schedule
+                          Periodo
                         </th>
                         <th
                           scope="col"
                           className="text-sm font-medium text-gray-900 px-6 py-4 text-center"
                         >
-                          Actions
+                          Ações
                         </th>
                       </tr>
                     </thead>
@@ -154,7 +155,7 @@ export default function Attendance() {
                         </td>
                         <td className="text-sm text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
                           <button className="bg-red-600 text-white rounded px-4 py-2">
-                            Edit
+                            Editar Chamada
                           </button>
                         </td>
                       </tr>
@@ -167,7 +168,7 @@ export default function Attendance() {
                         </td>
                         <td className="text-sm text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
                           <button className="bg-red-600 text-white rounded px-4 py-2">
-                            Edit
+                            Editar Chamada
                           </button>
                         </td>
                       </tr>
@@ -180,7 +181,7 @@ export default function Attendance() {
                         </td>
                         <td className="text-sm text-center text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
                           <button className="bg-red-600 text-white rounded px-4 py-2">
-                            Edit
+                            Editar Chamada
                           </button>
                         </td>
                       </tr>

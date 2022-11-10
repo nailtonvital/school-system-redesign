@@ -18,33 +18,41 @@ import { AuthContext } from "../../Context/AuthContext";
 import TeacherDashboard from '../TeacherDashboard';
 import CorDashboard from '../CorDashboard';
 import SchedulePage from '../SchedulePage';
+import RollCall from '../RollCall';
 
 
 export default function Dashboard() {
   const { role } = useContext(AuthContext);
   return (
     <div className="flex flex-row ">
-      <Sidebar/>
+      <Sidebar />
       <div className="flex-1 bg-white pl-7 pr-4 ml-20">
         <Navbar />
         <div>
           <Routes>
-            <Route path="student" element={<ProfilePage />} />
+            <Route path="aluno" element={<ProfilePage />} />
             <Route
               path=""
               element={
-                role === "student" ? <StudentDashboard /> : role === "teacher" ? <TeacherDashboard/> : <CorDashboard/>
+                role === "student" ? (
+                  <StudentDashboard />
+                ) : role === "teacher" ? (
+                  <TeacherDashboard />
+                ) : (
+                  <CorDashboard />
+                )
               }
             />
-            <Route path="absences" element={<PresenceData />} />
-            <Route path="schedule" element={<SchedulePage/>}/>
-            <Route path="attendance" element={<Attendance />} />
-            <Route path="lectures" element={<LecturesTable />} />
-            <Route path="classes" element={<ClassesTable />} />
-            <Route path="teachers" element={<TeachersTable />} />
-            <Route path="students" element={<StudentsTable />} />
-            <Route path="teacher" element={<Teacher />} />
-            <Route path="about-me" element={<PersonalInfo />} />
+            <Route path="faltas" element={<PresenceData />} />
+            <Route path="horario" element={<SchedulePage />} />
+            <Route path="chamada" element={<Attendance />} />
+            <Route path="materias" element={<LecturesTable />} />
+            <Route path="turmas" element={<ClassesTable />} />
+            <Route path="professores" element={<TeachersTable />} />
+            <Route path="realizar-chamada" element={<RollCall />} />
+            <Route path="alunos" element={<StudentsTable />} />
+            <Route path="professor" element={<Teacher />} />
+            <Route path="sobre-mim" element={<PersonalInfo />} />
           </Routes>
         </div>
       </div>

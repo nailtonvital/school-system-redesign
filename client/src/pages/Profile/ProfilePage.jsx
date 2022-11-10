@@ -25,18 +25,18 @@ export default function profile() {
         <div className="card p-4">
           <h3 className="font-bold">Pendencias</h3>
           <ul>
-            <li>Documents: School History</li>
+            <li>Documentos: Histórico Escolar</li>
           </ul>
         </div>
         <div className="card p-4">
-          <h3 className="font-bold mb-3 mt-2">Medical Certificates</h3>
+          <h3 className="font-bold mb-3 mt-2">Atestado</h3>
           <ul className="flex-col gap-2">
             <li className="flex justify-between">
-              <p>Ophthalmologist</p>
+              <p>Psiquiatra</p>
               <p className="text-gray-800">30/10/2002</p>
             </li>
             <li className="flex justify-between">
-              <p>Neurologist</p>
+              <p>Neurologista</p>
               <p className="text-gray-800">22/05/2022</p>
             </li>
           </ul>
@@ -48,7 +48,7 @@ export default function profile() {
             <h3 className="font-bold">Presença</h3>
             <div className="my-3">
               <div className="flex justify-between">
-                <h2 className="text-red-600 font-bold text-xl">Bad</h2>
+                <h2 className="text-red-600 font-bold text-xl">Ruim</h2>
                 <p className="text-slate-500">30%</p>
               </div>
               <div className="w-full bg-gray-200 h-1">
@@ -79,7 +79,7 @@ export default function profile() {
             <h3 className="font-bold">Presença</h3>
             <div className="my-3">
               <div className="flex justify-between">
-                <h2 className="text-red-600 font-bold text-xl">You</h2>
+                <h2 className="text-red-600 font-bold text-xl">Aluno</h2>
                 <p className="text-slate-500">30%</p>
               </div>
               <div className="w-full bg-gray-200 h-1 mb-2">
@@ -89,7 +89,7 @@ export default function profile() {
                 <div className="bg-green-600 h-1 w-5/12"></div>
               </div>
               <div className="flex justify-between mt-1">
-                <h2 className="text-green-600 font-bold text-xl">Average</h2>
+                <h2 className="text-green-600 font-bold text-xl">Média escolar</h2>
                 <p className="text-slate-500">45%</p>
               </div>
             </div>

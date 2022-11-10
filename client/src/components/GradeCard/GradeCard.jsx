@@ -30,21 +30,45 @@ export default function GradeCard() {
     }
 
     return (
-        <div className='h-full p-5 card'>
-            <div className="label">
-                <div className="cardHead">
-                    <h4>Performance</h4>
-                    <p>Your Grades</p>
-                </div>
-            </div>
-
-            <Doughnut data={data} className="" />
-            <div className="legend">
-                <p className='legendItem'><span className='indicator' style={{ color: '#04C35C' }}>⬤</span><br />MB</p>
-                <p className='legendItem'><span className='indicator' style={{ color: '#4285F4' }}>⬤</span><br />B</p>
-                <p className='legendItem'><span className='indicator' style={{ color: '#E5E866' }}>⬤</span><br />R</p>
-                <p className='legendItem'><span className='indicator' style={{ color: '#E25959' }}>⬤</span><br />I</p>
-            </div>
+      <div className="h-full flex-col justify-between card">
+        <div className="flex justify-between p-5 items-center">
+          <div className="">
+            <h4 className="font-bold">Performance</h4>
+            <p className="text-xs -mt-1 text-slate-500">
+              Suas Notas
+            </p>
+          </div>
+          <p className="text-green-600 lg:text-xl">Bom</p>
         </div>
-    )
+
+        <Doughnut data={data} className="p-5" />
+        <div className="flex px-5 pb-5 md:pb-0 gap-5 mx-auto">
+          <p className="legendItem">
+            <span className="indicator" style={{ color: "#04C35C" }}>
+              ⬤
+            </span>
+            <br />
+            MB
+          </p>
+          <p className="legendItem">
+            <span className="indicator" style={{ color: "#4285F4" }}>
+              ⬤
+            </span>
+            <br />B
+          </p>
+          <p className="legendItem">
+            <span className="indicator" style={{ color: "#E5E866" }}>
+              ⬤
+            </span>
+            <br />R
+          </p>
+          <p className="legendItem">
+            <span className="indicator" style={{ color: "#E25959" }}>
+              ⬤
+            </span>
+            <br />I
+          </p>
+        </div>
+      </div>
+    );
 }
