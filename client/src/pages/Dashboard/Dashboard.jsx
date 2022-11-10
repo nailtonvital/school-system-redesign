@@ -19,6 +19,7 @@ import TeacherDashboard from '../TeacherDashboard';
 import CorDashboard from '../CorDashboard';
 import SchedulePage from '../SchedulePage';
 import RollCall from '../RollCall';
+import EntranceExam from '../EntranceExam';
 
 
 export default function Dashboard() {
@@ -44,6 +45,7 @@ export default function Dashboard() {
               }
             />
             <Route path="faltas" element={<PresenceData />} />
+            <Route path="vestibular" element={<EntranceExam />} />
             <Route path="horario" element={<SchedulePage />} />
             <Route path="chamada" element={<Attendance />} />
             <Route path="materias" element={<LecturesTable />} />

@@ -118,11 +118,23 @@ const dataT = {
             <Bar data={data} options={options} className="pt-3" />
           </div>
           <div className="card p-5 pl-5 h-96 w-full pb-10 mt-5">
-            <h3 className="font-bold text-xl">Registration Overtime</h3>
+            <h3 className="font-bold text-xl">Inscrições Ao longo do Tempo</h3>
             <Line data={dataLine} options={optionsLine} className="pt-3" />
           </div>
           <div className="card p-5 pl-5 h-96 w-full pb-10 mt-5">
-            <h3 className="font-bold text-xl">Registration Courses</h3>
+            <h3 className="font-bold text-xl">Inscrição por curso</h3>
+            <Bar data={dataT} options={optionsT} className="pt-3" />
+          </div>
+          <div className="card p-5 pl-5 h-96 w-full pb-10 mt-5">
+            <h3 className="font-bold text-xl">Taxa de Reprovação Ao longo do Tempo</h3>
+            <Line data={dataLine} options={optionsLine} className="pt-3" />
+          </div>
+          <div className="card p-5 pl-5 h-96 w-full pb-10 mt-5">
+            <h3 className="font-bold text-xl">Taxa de abandono Ao longo do Tempo</h3>
+            <Line data={dataLine} options={optionsLine} className="pt-3" />
+          </div>
+          <div className="card p-5 pl-5 h-96 w-full pb-10 mt-5">
+            <h3 className="font-bold text-xl">Menções Por Cursos</h3>
             <Bar data={dataT} options={optionsT} className="pt-3" />
           </div>
         </div>

@@ -35,7 +35,7 @@ export default function BimestralCard() {
     }
 
   return (
-    <div className="h-full card">
+    <div className="card p-5 pl-5 h-96 w-full pb-10 mt-5">
       <div className="flex justify-between p-5 items-center">
         <div className="">
           <h4 className="font-bold">Performance</h4>
@@ -43,9 +43,9 @@ export default function BimestralCard() {
         </div>
         <p className="lg:text-xl text-red-600">Ruim</p>
       </div>
-      <div className="h-72 mt-16">
+     
         <Line data={data} options={options} />
-      </div>
+      
     </div>
   );
 }
