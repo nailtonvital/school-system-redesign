@@ -26,13 +26,19 @@ export default function RollCall() {
                           scope="col"
                           class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
+                          RM
+                        </th>
+                        <th
+                          scope="col"
+                          class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        >
                           Nome
                         </th>
                         <th
                           scope="col"
                           class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                          RM
+                          Aulas
                         </th>
                       </tr>
                     </thead>
@@ -42,10 +48,24 @@ export default function RollCall() {
                           1
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          Kennan Lane
+                          99999
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          99999
+                          Kennan Lane
+                        </td>
+                        <td class="text-sm text-center text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <input
+                            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <input
+                            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
                         </td>
                       </tr>
                       <tr class="bg-white border-b text-left">
@@ -53,10 +73,24 @@ export default function RollCall() {
                           2
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          Paul McCartney
+                          99999
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          99999
+                          Paul McCartney
+                        </td>
+                        <td class="text-sm text-center text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <input
+                            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <input
+                            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
                         </td>
                       </tr>
                       <tr class=" border-b text-left">
@@ -64,10 +98,24 @@ export default function RollCall() {
                           3
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          Peter Parker
+                          99999
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          99999
+                          Peter Parker
+                        </td>
+                        <td class="text-sm text-center text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <input
+                            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <input
+                            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
                         </td>
                       </tr>
                     </tbody>
@@ -109,14 +157,14 @@ export default function RollCall() {
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   aria-label="Default select example"
                 >
-                  <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option selected>Selecione o módulo</option>
+                  <option value="1">1º</option>
+                  <option value="2">2º</option>
+                  <option value="3">3º</option>
                 </select>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex gap-2">
               <div class="mb-3 xl:w-96">
                 <label htmlFor="mod">Classe</label>
                 <select
@@ -237,8 +285,7 @@ export default function RollCall() {
               </div>
             </div>
             <div className="flex align-right">
-
-            <button className="align-right">fd</button>
+              <button className="align-right">fd</button>
             </div>
           </div>
         </div>
