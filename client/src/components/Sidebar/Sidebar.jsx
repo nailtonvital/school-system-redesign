@@ -331,7 +331,7 @@ function Sidebar(props) {
           </ul>
         </div>
       </div>
-      <div className="mb-2">
+      <div className="mb-10 md:mb-2">
         <div className="mb-2">
           {/* Alerta */}
           <div className="mb-2 group">
