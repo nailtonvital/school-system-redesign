@@ -24,11 +24,17 @@ import EntranceExam from '../EntranceExam';
 
 export default function Dashboard() {
   const { role } = useContext(AuthContext);
+  
   return (
     <div className="flex flex-row ">
-      <Sidebar />
-      <div className="flex-1 bg-white pl-7 pr-4 ml-20">
-        <Navbar />
+      {screen.width > 640 ? <Sidebar /> : null}
+
+      <div
+        className={
+          "flex-1 bg-white  pr-4" + (screen.width > 640 ? " pl-24" : "ml-20 px-4")
+        }
+      >
+        <Navbar menu={screen.width < 640 ? true : false} />
         <div>
           <Routes>
             <Route path="aluno" element={<ProfilePage />} />

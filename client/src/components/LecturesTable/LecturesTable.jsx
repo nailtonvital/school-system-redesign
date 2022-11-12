@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 export default function LecturesTable() {
   return (
-    <div className="card p-5 mb-7">
+    <div className="card p-5 mb-7 w-screen">
       <div className="flex justify-left">
         <div className="w-full">
-          <div className="input-group flex gap-1 items-stretch w-full mb-4">
+          <div className="input-group w-full flex gap-1 items-stretch mb-4">
             <input
               type="search"
               className="form-control rounded-full flex-auto min-w-0 block w-full px-5 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -17,8 +17,8 @@ export default function LecturesTable() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col">
-        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div className="flex flex-col w-full">
+        <div className="overflow-x sm:-mx-6 lg:-mx-8">
           <div className="py-2 inline-block w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden">
               <table className="table-auto text-left">
