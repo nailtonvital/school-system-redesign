@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function LecturesTable() {
   return (
-    <div className="card p-5 mb-7 w-screen">
+    <div className="card mb-7">
       <div className="flex justify-left">
         <div className="w-full">
           <div className="input-group w-full flex gap-1 items-stretch mb-4">
@@ -20,7 +20,7 @@ export default function LecturesTable() {
       <div className="flex flex-col w-full">
         <div className="overflow-x sm:-mx-6 lg:-mx-8">
           <div className="py-2 inline-block w-full sm:px-6 lg:px-8">
-            <div className="overflow-hidden">
+            <div className="overflow-x-auto">
               <table className="table-auto text-left">
                 <thead className="bg-white border-b">
                   <tr>

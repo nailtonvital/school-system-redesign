@@ -26,7 +26,7 @@ export default function TeachersTable() {
         : (bgColor = "bg-" + color + "-500");
 
   return (
-    <div className="card p-5 mb-7">
+    <div className="mb-7 w-screen p-5">
       <div className="flex justify-left">
         <div className="w-full">
           <div className="input-group flex gap-1 items-stretch w-full mb-4">
@@ -103,7 +103,7 @@ export default function TeachersTable() {
       <div className="flex flex-col">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 inline-block w-full sm:px-6 lg:px-8">
-            <div className="overflow-hidden">
+            <div className="overflow-x-auto">
               <table className="table-auto text-left">
                 <thead className="bg-white border-b">
                   {role ? (
@@ -166,7 +166,7 @@ export default function TeachersTable() {
                         </tr>
                         <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                           <td className="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
-                            <Link to="/dashboard/teacher">John Wick</Link>
+                            <Link to="/dashboard/professor">John Wick</Link>
                           </td>
                           <td className="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
                             johnwick@etec.sp.gov.br

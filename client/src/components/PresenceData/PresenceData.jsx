@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GradesTable from "../GradesTable/GradesTable";
 
 export default function PresenceData() {
   const lines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 121];
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
   return (
     <div className="flex-col">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mb-7">
-        <div className="card w-fit lg:w-full p-3 col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-2 mb-7">
+        <div className="card w-screen -w-20 lg:w-full p-3 col-span-2">
           <h3 className="font-bold">Presença</h3>
           <div className="my-3">
             <div className="flex justify-between">
@@ -57,7 +75,7 @@ export default function PresenceData() {
           </div>
         </div>
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col w-screen">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
             <div class="overflow-x-auto">

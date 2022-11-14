@@ -17,7 +17,7 @@ export default function Calendar() {
       open: true,
       color: "info", // info | success | warning | error
       severity: "info", // info | success | warning | error
-      message: "🚀 The end of classes is coming 🔥 🔥 🔥",
+      message: "O Fim das Aulas Estão Chegando 🔥 ",
       showActionButton: true,
       showNotification: true,
       delay: 1500,

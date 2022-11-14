@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './style.css'
 import Sidebar from '../../components/Sidebar/Sidebar'
@@ -24,17 +24,36 @@ import EntranceExam from '../EntranceExam';
 
 export default function Dashboard() {
   const { role } = useContext(AuthContext);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
   
   return (
     <div className="flex flex-row ">
-      {screen.width > 640 ? <Sidebar /> : null}
+      {windowSize.innerWidth > 640 ? <Sidebar /> : null}
 
       <div
         className={
-          "flex-1 bg-white  pr-4" + (screen.width > 640 ? " pl-24" : "ml-20 px-4")
+          "flex-1 bg-white  pr-4" +
+          (windowSize.innerWidth > 640 ? " pl-24" : "ml-20")
         }
       >
-        <Navbar menu={screen.width < 640 ? true : false} />
+        <Navbar menu={windowSize.innerWidth < 640 ? false : true} />
         <div>
           <Routes>
             <Route path="aluno" element={<ProfilePage />} />

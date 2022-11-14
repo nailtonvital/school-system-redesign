@@ -6,10 +6,10 @@ export default function SchedulePage() {
     const [openTab, setOpenTab] = useState(1);
   return (
     <>
-      <div className="flex flex-wrap">
-        <div className="w-full">
+      <div className="flex flex-wrap w-screen">
+        <div className="w-screen ">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row w-screen"
             role="tablist"
           >
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -76,9 +76,14 @@ export default function SchedulePage() {
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <Schedule />
                 </div>
-                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                  <h2 className="font-bold mt-2 text-2">Your Schedule</h2>
-                  <div className="overflow-x-auto">
+                <div
+                  className={
+                    openTab === 2 ? "block overflow-x-auto w-screen" : "hidden"
+                  }
+                  id="link2"
+                >
+                  <h2 className="font-bold mt-2 text-xl">Your Schedule</h2>
+                  <div className=" ">
                     <table className="table-auto  mt-5 border ">
                       <thead>
                         <tr>
@@ -196,7 +201,10 @@ export default function SchedulePage() {
                     </table>
                   </div>
                 </div>
-                <div className={openTab === 3 ? "block" : "hidden"} id="link3">
+                <div
+                  className={openTab === 3 ? "block w-full pl-0 " : "hidden"}
+                  id="link3"
+                >
                   <Calendar />
                 </div>
               </div>

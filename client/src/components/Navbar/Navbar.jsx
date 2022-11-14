@@ -6,12 +6,12 @@ import Modal from "@mui/material/Modal";
 import student from "../../assets/Keenan.jpg";
 import teacher from "../../assets/teacher.png";
 import coordinator from "../../assets/coordinator.png";
-import logo from "../../assets/logo.png";
+import logoExtend from "../../assets/logo-nsa-extend.png";
 import { AuthContext } from "../../Context/AuthContext";
 
-export default function Navbar() {
+export default function Navbar(props) {
     const location = useLocation();
-    const { role } = useContext(AuthContext);
+    const { setAuth, role } = useContext(AuthContext);
     const [openNotification, setOpenNotification] = useState(false);
     const [openReport, setOpenReport] = useState(false);
     const handleOpenNotification = () => setOpenNotification(true);
@@ -30,49 +30,79 @@ export default function Navbar() {
     }
   return (
     <>
-      <div className="flex items-center gap-4 w-full pt-6 mb-4">
-        {screen.width > 640 ? null : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            className="fill-current h-7 mb-2 w-7 text-gray-400 group-hover:text-red-500"
+      {props.menu ? null : menu ? (
+        <div className="mt-5 -mb-2 flex justify-between items-center">
+          <div className="ml-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="fill-current h-8 mb-2 w-8 text-black group-hover:text-red-500 ease-out duration-300"
+              onClick={handleMenu}
+            >
+              <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+            </svg>
+          </div>
+          <img src={logoExtend} className="h-4" alt="" />
+          <Link
             onClick={handleMenu}
+            to="sobre-mim"
+            className="flex gap-3 items-center mt-2 mr-3"
           >
-            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
-          </svg>
-        )}
-
-        <h2 className="font-bold leading-tight text-3xl  mb-2 text-ellipsis w-52 capitalize">
-          {location.pathname.substring(1).length > 9
-            ? location.pathname.substring(11).replace("-", " ")
-            : location.pathname.substring(1)}
-        </h2>
-      </div>
-      {!menu ? null : (
-        <div className="">
-          <div className="mt-8 " onClick={handleMenu}>
-            <Link to="sobre-mim" className="flex gap-3 items-center mt-2">
-              <img
-                src={
-                  role
-                    ? role === "student"
-                      ? student
-                      : role === "teacher"
-                      ? teacher
-                      : role === "coordinator"
-                      ? coordinator
-                      : null
+            <img
+              src={
+                role
+                  ? role === "student"
+                    ? student
+                    : role === "teacher"
+                    ? teacher
+                    : role === "coordinator"
+                    ? coordinator
                     : null
-                }
-                className="rounded-full w-12 h-12 mb-1 "
-              />
-              <div className="">
-                <h2 className="font-semibold">Keenan Lane</h2>
-                <p className="-mt-1 text-slate-600">Student</p>
-              </div>
-            </Link>
+                  : null
+              }
+              className="rounded-full w-9 h-9 mb-1 "
+            />
+          </Link>
+        </div>
+      ) : (
+        <div className="mt-5 -mb-2 flex justify-between items-center">
+          <div className="ml-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="fill-current h-8 mb-2 w-8 text-black group-hover:text-red-500 ease-out duration-300"
+              onClick={handleMenu}
+            >
+              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+            </svg>
+          </div>
+          <img src={logoExtend} className="h-4" alt="" />
+          <Link to="sobre-mim" className="flex gap-3 items-center mt-2 mr-3">
+            <img
+              src={
+                role
+                  ? role === "student"
+                    ? student
+                    : role === "teacher"
+                    ? teacher
+                    : role === "coordinator"
+                    ? coordinator
+                    : null
+                  : null
+              }
+              className="rounded-full w-9 h-9 mb-1 "
+            />
+          </Link>
+        </div>
+      )}
+
+      {!menu ? null : (
+        <div className="ease-out duration-300">
+          <div className="mt-8 " onClick={handleMenu}>
             <div className="mt-6">
               <ul>
                 {/* Dashboard */}
@@ -390,10 +420,10 @@ export default function Navbar() {
           <div className="mb-10 md:mb-2">
             <div className="mb-2">
               {/* Alerta */}
-              <div className="mb-2 group">
+              <div className="mb-2 py-2 group">
                 <a
                   onClick={handleOpenReport}
-                  className="flex gap-3 items-center mt-2 "
+                  className="flex gap-3 items-center  "
                 >
                   <span
                     data-bs-toggle="tooltip"
@@ -461,7 +491,7 @@ export default function Navbar() {
                             border border-solid border-gray-300
                             rounded
                             transition
-                            ease-in-out
+                            ease-out duration-300-out
                             m-0
                             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                     aria-label="Default select example"
@@ -526,7 +556,7 @@ export default function Navbar() {
                                     border border-solid border-gray-300
                                     rounded
                                     transition
-                                    ease-in-out
+                                    ease-out duration-300-out
                                     m-0
                                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                                   "
@@ -563,33 +593,35 @@ export default function Navbar() {
                 </Box>
               </Modal>
               {/* Notificações */}
-              <Link
-                onClick={handleOpenNotification}
-                className="flex gap-3 items-center"
-              >
-                <span
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  title="Notifications"
+              <div className="mb-2 py-2">
+                <Link
+                  onClick={handleOpenNotification}
+                  className="flex gap-3 items-center mb-2"
                 >
-                  <svg
-                    className="fill-current h-5 w-5 text-gray-400 group-hover:text-red-500 "
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Notifications"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M14 3V3.28988C16.8915 4.15043 19 6.82898 19 10V17H20V19H4V17H5V10C5 6.82898 7.10851 4.15043 10 3.28988V3C10 1.89543 10.8954 1 12 1C13.1046 1 14 1.89543 14 3ZM7 17H17V10C17 7.23858 14.7614 5 12 5C9.23858 5 7 7.23858 7 10V17ZM14 21V20H10V21C10 22.1046 10.8954 23 12 23C13.1046 23 14 22.1046 14 21Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
-                <span className="text-md text-gray-400 text-center  group-hover:text-red-500">
-                  Notificações
-                </span>
-              </Link>
+                    <svg
+                      className="fill-current h-5 w-5 text-gray-400 group-hover:text-red-500 "
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14 3V3.28988C16.8915 4.15043 19 6.82898 19 10V17H20V19H4V17H5V10C5 6.82898 7.10851 4.15043 10 3.28988V3C10 1.89543 10.8954 1 12 1C13.1046 1 14 1.89543 14 3ZM7 17H17V10C17 7.23858 14.7614 5 12 5C9.23858 5 7 7.23858 7 10V17ZM14 21V20H10V21C10 22.1046 10.8954 23 12 23C13.1046 23 14 22.1046 14 21Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <span className="text-md text-gray-400 text-center  group-hover:text-red-500">
+                    Notificações
+                  </span>
+                </Link>
+              </div>
               <Modal
                 open={openNotification}
                 onClose={handleCloseNotification}
@@ -598,8 +630,8 @@ export default function Navbar() {
               >
                 <Box>
                   <>
-                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                      <div className="relative w-auto my-6 max-w-3xl">
+                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none  focus:outline-none">
+                      <div className="relative w-full mx-5 my-6 ">
                         {/*content*/}
                         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                           {/*header*/}
@@ -625,7 +657,7 @@ export default function Navbar() {
                           {/*body*/}
                           <div className="overflow-auto h-96">
                             <div className="flex-col mx-2 my-2 p-5 cursor-pointer">
-                              <div className="flex">
+                              <div className="flex justify-between">
                                 <div className="">
                                   <h5 className="font-bold">Título</h5>
                                   <p className="text-slate-600 w-9/12 truncate">
@@ -736,6 +768,18 @@ export default function Navbar() {
           </div>
         </div>
       )}
+      <div className="flex items-center gap-4 w-full pt-6 mb-4">
+        <h2
+          className={
+            "font-bold leading-tight text-3xl  mb-2 text-ellipsis w-52 capitalize" +
+            (props.menu ? " " : " ml-2")
+          }
+        >
+          {location.pathname.substring(1).length > 9
+            ? location.pathname.substring(11).replace("-", " ")
+            : location.pathname.substring(1)}
+        </h2>
+      </div>
     </>
   );
 }

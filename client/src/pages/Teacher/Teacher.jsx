@@ -10,23 +10,22 @@ import GradesTable from '../../components/GradesTable/GradesTable';
 
 export default function Teacher() {
   return (
-    <div className=" flex">
-      <div className='flex-col mr-5'>
+    <div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
+      <div className="col-span-2">
         <PeopleCard
           photo={photo}
-          name='John Wick'
-          role='Calculus Teacher'
-          phrase='We cannot solve our problems with the same thinking we used when we created them.'
+          name="John Wick"
+          role="Calculus Teacher"
+          phrase="We cannot solve our problems with the same thinking we used when we created them."
           teacherDate={2001}
-          year='2020'
+          year="2020"
         />
         <EmailCard />
       </div>
-      <div id='div'>
+      <div id="div">
         <ScoreCard score={87} popular={15} classes={8451} />
         <GradesTable />
-
       </div>
     </div>
-  )
+  );
 }
