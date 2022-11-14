@@ -77,13 +77,11 @@ export default function SchedulePage() {
                   <Schedule />
                 </div>
                 <div
-                  className={
-                    openTab === 2 ? "block overflow-x-auto w-screen" : "hidden"
-                  }
+                  className={openTab === 2 ? "block  w-screen" : "hidden"}
                   id="link2"
                 >
-                  <h2 className="font-bold mt-2 text-xl">Your Schedule</h2>
-                  <div className=" ">
+                  <h2 className="font-bold mt-2 text-xl">Seu Horário</h2>
+                  <div className="overflow-x-auto ">
                     <table className="table-auto  mt-5 border ">
                       <thead>
                         <tr>

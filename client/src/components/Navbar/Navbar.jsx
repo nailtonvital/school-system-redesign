@@ -31,7 +31,7 @@ export default function Navbar(props) {
   return (
     <>
       {props.menu ? null : menu ? (
-        <div className="mt-5 -mb-2 flex justify-between items-center">
+        <div className="mt-5 pl-2.5 -mb-2 flex justify-between items-center">
           <div className="ml-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ export default function Navbar(props) {
           </Link>
         </div>
       ) : (
-        <div className="mt-5 -mb-2 flex justify-between items-center">
+        <div className="mt-5 pl-3 -mb-2 flex justify-between items-center">
           <div className="ml-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ export default function Navbar(props) {
       )}
 
       {!menu ? null : (
-        <div className="ease-out duration-300">
+        <div className="ease-out duration-300 pl-5">
           <div className="mt-8 " onClick={handleMenu}>
             <div className="mt-6">
               <ul>
@@ -771,7 +771,7 @@ export default function Navbar(props) {
       <div className="flex items-center gap-4 w-full pt-6 mb-4">
         <h2
           className={
-            "font-bold leading-tight text-3xl  mb-2 text-ellipsis w-52 capitalize" +
+            "font-bold leading-tight text-3xl ml-5 md:ml-0 mb-2 text-ellipsis w-52 capitalize" +
             (props.menu ? " " : " ml-2")
           }
         >
