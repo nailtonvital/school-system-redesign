@@ -1,4 +1,4 @@
-# nsa-redesign
+# NSA - Sistema de Notas das Escolas Técnicas Estaduais
 
 ## Home
 ![Screenshot_20](https://user-images.githubusercontent.com/51789882/209363561-19dd891c-e7ce-49c6-97c2-6c9cb31568be.png)
@@ -10,7 +10,6 @@
 
 ## Absences
 ![faltas](https://user-images.githubusercontent.com/51789882/209363781-5846d2d2-2ad4-4b60-9123-5d8bbb759ee1.png)
-
 ## Subjects
 ![materias](https://user-images.githubusercontent.com/51789882/209363919-5f93480a-fe9d-471d-b4d6-38e73c4c2437.png)
 
